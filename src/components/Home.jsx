@@ -1,3 +1,10 @@
+import Nav from "./Nav";
+
 export default function Home(props) {
-  return <div>HOMEPAGEEEEE</div>;
+  return (
+    <div>
+      <Nav />
+      <div>HOMEPAGEEEEE</div>
+    </div>
+  );
 }
