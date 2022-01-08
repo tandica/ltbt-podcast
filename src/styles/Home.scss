@@ -6,11 +6,13 @@
 .homepage-text-container {
   background-color: #866042;
   color: white;
+  padding-bottom: 50px;
 
   .homepage-text-title {
     margin: 0em;
     text-align: center;
     padding-top: 3rem;
+    color: #ebdab6;
   }
 
   .homepage-text-paragraph {
@@ -25,5 +27,9 @@
     border: none;
     border-radius: 10px;
     padding: 10px 25px 10px 25px;
+    &:hover {
+      background: #5c3a15;
+      color: #fff;
+    }
   }
 }
