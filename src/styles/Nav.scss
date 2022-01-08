@@ -1,0 +1,15 @@
+.nav {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 4rem 1rem 4rem;
+
+  .nav-logo {
+  }
+
+  .nav-items {
+    a {
+      margin-right: 2rem;
+    }
+  }
+}
