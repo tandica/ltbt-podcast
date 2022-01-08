@@ -2,3 +2,28 @@
   background-image: url(../assets/1.png);
   height: 650px;
 }
+
+.homepage-text-container {
+  background-color: #866042;
+  color: white;
+
+  .homepage-text-title {
+    margin: 0em;
+    text-align: center;
+    padding-top: 3rem;
+  }
+
+  .homepage-text-paragraph {
+    text-align: center;
+    margin: 1em 15em 2em 15em;
+  }
+
+  .homepage-button {
+    margin: 0 auto;
+    display: block;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px 10px 25px;
+  }
+}

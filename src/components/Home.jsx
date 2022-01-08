@@ -6,9 +6,18 @@ export default function Home(props) {
     <div>
       <div className="homepage-header-image">
         <Nav />
-        <div>HOMEPAGEEEEE</div>
       </div>
-      {/* <img src="../assets/1.png" alt="Home" /> */}
+      <div className="homepage-text-container">
+        <h1 className="homepage-text-title">TITLE</h1>
+        <p className="homepage-text-paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris n
+        </p>
+        <button type="button" className="homepage-button">
+          Listen to our podcast!
+        </button>
+      </div>
     </div>
   );
 }
