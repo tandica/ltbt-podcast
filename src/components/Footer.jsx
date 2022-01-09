@@ -5,12 +5,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../styles/Footer.scss";
 
 export default function Footer() {
   return (
-    <div>
-      <div>LTBT</div>
-      <div>
+    <div className="footer-container">
+      <div className="footer-logo">LTBT</div>
+      <div className="footer-social-icons">
         <a href="https://www.instagram.com/letstalkbigtingz/">
           <FontAwesomeIcon icon={faInstagram} size="2x" />
         </a>
@@ -21,7 +22,7 @@ export default function Footer() {
           <FontAwesomeIcon icon={faEnvelope} size="2x" />
         </a>
       </div>
-      <div>
+      <div className="footer-pagelinks">
         <a>EPISODES</a>
         <a>EVENTS</a>
         <a>ABOUT US</a>
