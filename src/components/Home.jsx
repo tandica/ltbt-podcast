@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import Footer from "./Footer";
 import "../styles/Home.scss";
 
 export default function Home(props) {
@@ -18,6 +19,7 @@ export default function Home(props) {
           Listen to our podcast!
         </button>
       </div>
+      <Footer />
     </div>
   );
 }
