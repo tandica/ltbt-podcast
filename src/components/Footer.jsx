@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <div className="footer-container">
       <div className="footer-logo">LTBT</div>
-      <div className="footer-social-icons">
+      <div className="footer-social-icons-container">
         <a href="https://www.instagram.com/letstalkbigtingz/">
           <FontAwesomeIcon
             icon={faInstagram}
@@ -35,11 +35,11 @@ export default function Footer() {
         </a>
       </div>
       <div className="footer-pagelinks">
-        <a>EPISODES</a>
-        <a>EVENTS</a>
-        <a>ABOUT US</a>
-        <a>STORE</a>
-        <a>CONTACT US</a>
+        <a href="/episodes">EPISODES</a>
+        <a href="/events">EVENTS</a>
+        <a href="/about">ABOUT US</a>
+        <a href="/store">STORE</a>
+        <a href="/contact">CONTACT US</a>
       </div>
     </div>
   );
