@@ -9,8 +9,15 @@
   }
 
   .nav-items {
+    color: #fff;
+
     a {
       margin-right: 2rem;
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: #ebdab6;
+      }
     }
   }
 }
