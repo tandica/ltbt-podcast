@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Episode from "./components/Episodes";
+import Events from "./components/Events";
 import "./styles/App.scss";
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
         </Route>
         <Route path="/episodes" exact>
           <Episode />
+        </Route>
+        <Route path="/events" exact>
+          <Events />
         </Route>
         <div>
           <nav>
