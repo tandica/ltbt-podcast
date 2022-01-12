@@ -4,9 +4,13 @@
 }
 
 .events-container {
+  background: #866042;
+
   .events-title {
     text-align: center;
     padding-top: 3rem;
+    margin: 0em;
+    color: #ebdab6;
   }
 
   .events-liveshow-container {
@@ -14,10 +18,13 @@
     justify-content: center;
 
     .events-liveshow-card {
-      border: 1px solid red;
       margin: 1.2em;
       padding: 2rem 4rem 2rem 4rem;
       border-radius: 50px;
+      // box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      box-shadow: #482d1061 0px 4px 34px;
+      background: #ebdab6;
+      color: #271000;
 
       .events-liveshow-title {
         text-align: center;
@@ -35,6 +42,7 @@
 
   .events-title2 {
     text-align: center;
+    color: #ebdab6;
   }
 
   .upcoming-event-container {
