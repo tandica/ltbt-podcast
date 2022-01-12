@@ -9,7 +9,10 @@ export default function Events() {
       <div className="events-header-image">
         <Nav />
       </div>
-      <div className="events-container">Events page</div>
+      <div className="events-container">
+        <h1 className="events-title">UPCOMING LIVE SHOWS</h1>
+        <h1 className="events-title2">UPCOMING EVENTS</h1>
+      </div>
       <Footer />
     </div>
   );
