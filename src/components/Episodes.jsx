@@ -10,9 +10,9 @@ export default function Episodes() {
       <div className="episodes-header-image">
         <Nav />
       </div>
-      <div>
+      <div className="episodes-container">
         <h1 className="episodes-title">LISTEN TO OUR PODCAST</h1>
-        <div>
+        <div className="episodes-links">
           <a href="https://open.spotify.com/show/1aK5PXUKIrhbv10ZHaMpKo?si=1a1c846310fd42a6">
             <FontAwesomeIcon
               icon={faSpotify}
@@ -35,6 +35,11 @@ export default function Episodes() {
             />
           </a>
         </div>
+        <p className="episodes-paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris
+        </p>
       </div>
     </div>
   );

@@ -2,3 +2,33 @@
   background-image: url(../assets/6.png);
   height: 650px;
 }
+
+.episodes-container {
+  background: #271000;
+  color: #fff;
+
+  .episodes-title {
+    text-align: center;
+    color: #ebdab6;
+    margin: 0em;
+    padding-top: 3rem;
+  }
+
+  .episodes-links {
+    text-align: center;
+    margin: 2rem 1rem 2rem 0rem;
+
+    a {
+      color: #ebdab6;
+      margin: 0rem 1rem 1rem 0rem;
+      &:hover {
+        color: #866042;
+      }
+    }
+  }
+
+  .episodes-paragraph {
+    text-align: center;
+    margin: 0em;
+  }
+}
