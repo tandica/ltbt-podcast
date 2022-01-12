@@ -5,8 +5,48 @@
 
 .events-container {
   .events-title {
+    text-align: center;
+    padding-top: 3rem;
+  }
+
+  .events-liveshow-container {
+    display: flex;
+    justify-content: center;
+
+    .events-liveshow-card {
+      border: 1px solid red;
+      margin: 1.2em;
+      padding: 2rem 4rem 2rem 4rem;
+      border-radius: 50px;
+
+      .events-liveshow-title {
+        text-align: center;
+      }
+
+      .events-liveshow-date {
+        text-align: center;
+      }
+
+      .events-liveshow-location {
+        text-align: center;
+      }
+    }
   }
 
   .events-title2 {
+    text-align: center;
+  }
+
+  .upcoming-event-container {
+    .upcoming-event-card {
+      .upcoming-event-title {
+      }
+
+      .upcoming-event-date {
+      }
+
+      .upcoming-event-info {
+      }
+    }
   }
 }
