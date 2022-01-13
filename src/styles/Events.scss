@@ -1,6 +1,9 @@
 .events-header-image {
   background-image: url(../assets/11.png);
+  background-repeat: no-repeat;
   height: 650px;
+  min-width: 100%;
+  background-size: cover;
 }
 
 .events-container {
