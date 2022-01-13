@@ -1,3 +1,13 @@
+import Nav from "./Nav";
+import "../styles/About.scss";
+
 export default function About() {
-  return <div>about page</div>;
+  return (
+    <div>
+      <div className="about-header-image">
+        <Nav />
+      </div>
+      about page
+    </div>
+  );
 }
