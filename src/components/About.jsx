@@ -23,8 +23,6 @@ export default function About() {
         </div>
         <div className="about-who-img">
           <img src="../assets/placeholder-image.png" alt="yhtyhyt" />
-          <img src="../assets/2.png" alt="yhtyhyt" />
-          <img src="assets/3.png" alt="yhtyhyt" />
         </div>
       </div>
     </div>

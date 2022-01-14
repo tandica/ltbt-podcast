@@ -5,3 +5,26 @@
   min-width: 100%;
   background-size: cover;
 }
+
+.about-who-container {
+  background: #3a1b0f;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0rem 7rem 2rem 7rem;
+
+  .about-who {
+    width: 50%;
+
+    .about-who-title {
+      color: #ebdab6;
+    }
+
+    .about-who-paragraph {
+      color: white;
+    }
+
+    .about-who-img {
+      width: 50%;
+    }
+  }
+}
