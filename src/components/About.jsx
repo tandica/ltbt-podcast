@@ -1,5 +1,6 @@
 import Nav from "./Nav";
 import "../styles/About.scss";
+import { teamMember } from "../data";
 
 export default function About() {
   return (
@@ -24,6 +25,15 @@ export default function About() {
         <div className="about-who-img">
           <img src="../assets/placeholder-image.png" alt="yhtyhyt" />
         </div>
+      </div>
+      <div className="about-team-container">
+        {teamMember.map((person) => (
+          <div className="about-team-card">
+            <h3 className="about-team-name">{person.name}</h3>
+            {/* <img className="about-team-img" src={person.photo} alt="person" /> */}
+            <p className="about-team-description">{person.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

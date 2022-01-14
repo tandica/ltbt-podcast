@@ -28,3 +28,26 @@
     }
   }
 }
+
+.about-team-container {
+  background: #866042;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fff;
+
+  .about-team-card {
+    border: 1px solid red;
+
+    .about-team-name {
+      text-align: center;
+    }
+
+    .about-team-img {
+    }
+
+    .about-team-description {
+      text-align: center;
+    }
+  }
+}
