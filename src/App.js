@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Episode from "./components/Episodes";
 import Events from "./components/Events";
 import About from "./components/About";
+import Contact from "./components/Contact";
 import "./styles/App.scss";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/about" exact>
           <About />
+        </Route>
+        <Route path="/contact" exact>
+          <Contact />
         </Route>
         <div>
           <nav>

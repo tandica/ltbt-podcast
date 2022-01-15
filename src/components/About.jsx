@@ -30,7 +30,7 @@ export default function About() {
         {teamMember.map((person) => (
           <div className="about-team-card">
             <h3 className="about-team-name">{person.name}</h3>
-            {/* <img className="about-team-img" src={person.photo} alt="person" /> */}
+            <img className="about-team-img" src={person.photo} alt="person" />
             <p className="about-team-description">{person.description}</p>
           </div>
         ))}

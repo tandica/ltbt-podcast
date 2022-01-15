@@ -47,17 +47,17 @@ export const upcomingEvents = [
 export const teamMember = [
   {
     name: "Kadi",
-    // photo: "placeholder-image.png",
+    photo: "placeholder-image.png",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
   {
     name: "Hawa",
-    // photo: "assets/placeholder-image.png",
+    photo: "assets/placeholder-image.png",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
   {
     name: "Seidy",
-    // photo: "assets/placeholder-image.png",
+    photo: "assets/placeholder-image.png",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
 ];
