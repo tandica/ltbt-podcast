@@ -1,6 +1,7 @@
 import Nav from "./Nav";
 import "../styles/About.scss";
 import { teamMember } from "../data";
+import image from "../assets/1.png";
 
 export default function About() {
   return (
@@ -22,15 +23,15 @@ export default function About() {
             Tingz." These discussions turned into{" "}
           </p>
         </div>
-        <div className="about-who-img">
-          <img src="../assets/placeholder-image.png" alt="yhtyhyt" />
+        <div className="about-who-img-div">
+          <img src={image} alt="yhtyhyt" className="about-who-img" />
         </div>
       </div>
       <div className="about-team-container">
         {teamMember.map((person) => (
           <div className="about-team-card">
             <h3 className="about-team-name">{person.name}</h3>
-            <img className="about-team-img" src={person.photo} alt="person" />
+            <img className="about-team-img" src={image} alt="person" />
             <p className="about-team-description">{person.description}</p>
           </div>
         ))}

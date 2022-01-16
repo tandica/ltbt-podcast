@@ -9,11 +9,12 @@
 .about-who-container {
   background: #3a1b0f;
   display: flex;
+  // justify-content: center;
   flex-wrap: wrap;
   padding: 0rem 7rem 2rem 7rem;
 
   .about-who {
-    width: 50%;
+    width: 30%;
 
     .about-who-title {
       color: #ebdab6;
@@ -22,9 +23,14 @@
     .about-who-paragraph {
       color: white;
     }
+  }
+
+  .about-who-img-div {
+    width: 30%;
 
     .about-who-img {
-      width: 50%;
+      height: 200px;
+      width: 40%;
     }
   }
 }
