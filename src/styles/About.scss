@@ -29,34 +29,66 @@
 
   .about-who-img-div {
     width: 40%;
+    margin-top: 3rem;
 
     .about-who-img {
       height: 300px;
       background-size: cover;
       width: 100%;
+      border-radius: 50px;
     }
   }
 }
 
 .about-team-container {
   background: #866042;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  color: #fff;
 
-  .about-team-card {
-    border: 1px solid red;
+  .about-team-title {
+    text-align: center;
+    margin: 0em;
+    color: #ebdab6;
+    padding-top: 3rem;
+  }
 
-    .about-team-name {
-      text-align: center;
+  .about-team-container-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #fff;
+    margin-left: 5em;
+    margin-right: 5em;
+
+    .about-team-card {
+      border: 1px solid red;
+      width: 30%;
+      margin: 3rem 1rem 3rem 1rem;
+
+      .about-team-name {
+        text-align: center;
+      }
+
+      .about-team-img {
+        height: 300px;
+        background-size: cover;
+        width: 100%;
+        border-radius: 50px;
+      }
+
+      .about-team-description {
+        text-align: center;
+      }
     }
+  }
+}
 
-    .about-team-img {
+.about-mission-container {
+  .about-mission-titles {
+    .about-mission {
     }
+  }
 
-    .about-team-description {
-      text-align: center;
+  .about-mission-paragraph {
+    .about-mission-text {
     }
   }
 }

@@ -28,13 +28,38 @@ export default function About() {
         </div>
       </div>
       <div className="about-team-container">
-        {teamMember.map((person) => (
-          <div className="about-team-card">
-            <h3 className="about-team-name">{person.name}</h3>
-            <img className="about-team-img" src={image} alt="person" />
-            <p className="about-team-description">{person.description}</p>
-          </div>
-        ))}
+        <h1 className="about-team-title">MEET THE TEAM</h1>
+        <div className="about-team-container-card">
+          {teamMember.map((person) => (
+            <div className="about-team-card">
+              <h3 className="about-team-name">{person.name}</h3>
+              <img className="about-team-img" src={image} alt="person" />
+              <p className="about-team-description">{person.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="about-mission-container">
+        <div className="about-mission-titles">
+          <h1 className="about-mission">Mission</h1>
+          <h1 className="about-mission">Values</h1>
+          <h1 className="about-mission">Values</h1>
+        </div>
+        <div className="about-mission-paragraph">
+          <p className="about-mission-text">
+            Create platforms where young Black creatives are noticed,
+            appreciated, and succeed
+          </p>
+          <p className="about-mission-text">
+            A synergetic, Black women led organization that allows a safe space
+            for conversation, realization, and support for, to, and by Black
+            women
+          </p>
+          <p className="about-mission-text">
+            Collaboration, success, community, and leadership that will provide
+            positive outcomes for young Black women and girls
+          </p>
+        </div>
       </div>
     </div>
   );
