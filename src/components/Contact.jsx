@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import Footer from "./Footer";
 import {
   fab,
   faInstagram,
@@ -46,6 +47,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

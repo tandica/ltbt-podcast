@@ -1,4 +1,5 @@
 import Nav from "./Nav";
+import Footer from "./Footer";
 import "../styles/About.scss";
 import { teamMember } from "../data";
 import image from "../assets/1.png";
@@ -61,6 +62,7 @@ export default function About() {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
