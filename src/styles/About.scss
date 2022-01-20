@@ -82,13 +82,26 @@
 }
 
 .about-mission-container {
+  display: flex;
+  justify-content: center;
+  background: #271000;
+  color: #ebdab6;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  padding-top: 3rem;
+
   .about-mission-titles {
+    width: 40%;
+
     .about-mission {
+      margin: 0em;
+      padding: 2em;
     }
   }
 
   .about-mission-paragraph {
     .about-mission-text {
+      margin: 6em;
     }
   }
 }
