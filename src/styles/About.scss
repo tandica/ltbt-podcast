@@ -12,6 +12,7 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 0rem 7rem 2rem 7rem;
+  font-family: "Cardo", serif;
 
   .about-who {
     width: 50%;
@@ -41,6 +42,7 @@
 
 .about-team-container {
   background: #866042;
+  font-family: "Cardo", serif;
 
   .about-team-title {
     text-align: center;
@@ -90,14 +92,18 @@
 
   .about-mission-titles {
     width: 40%;
+    font-family: "Great Vibes", cursive;
 
     .about-mission {
       margin: 0em;
       padding: 2em;
+      font-size: 50px;
     }
   }
 
   .about-mission-paragraph {
+    font-family: "Cardo", serif;
+
     .about-mission-text {
       margin: 6em;
     }
