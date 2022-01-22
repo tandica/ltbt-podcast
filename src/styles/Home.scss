@@ -38,3 +38,11 @@
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  .homepage-text-container {
+    .homepage-text-paragraph {
+      margin: 1em 2em 2em 2em;
+    }
+  }
+}
