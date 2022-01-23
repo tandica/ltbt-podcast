@@ -50,3 +50,24 @@
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  .nav {
+    margin: 0rem 3rem 0rem 3rem;
+    padding-top: 0rem;
+
+    .nav-logo {
+      margin-top: 2rem;
+    }
+
+    .nav-items {
+      margin-top: 2rem;
+
+      a {
+        margin-top: 1rem;
+        margin-right: 0rem;
+        margin-left: 1.7rem;
+      }
+    }
+  }
+}
