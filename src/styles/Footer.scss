@@ -49,7 +49,7 @@
 @media screen and (max-width: 576px) {
   .footer-container {
     flex-direction: column;
-    padding: 2em 0em 2em 0em;
+    padding: 3em 0em 2em 0em;
 
     .footer-logo {
       margin: 0 auto;
@@ -57,7 +57,7 @@
 
     .footer-social-icons-container {
       margin: 0 auto;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
 
       a {
         .footer-social-icons {
@@ -68,7 +68,7 @@
 
     .footer-pagelinks {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
   }
 }
