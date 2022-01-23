@@ -87,3 +87,18 @@
     }
   }
 }
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .events-container {
+    background: #866042;
+    font-family: "Cardo", serif;
+
+    .events-liveshow-container {
+      padding: 2rem 4em 0em 4em;
+    }
+
+    .upcoming-event-container {
+      padding: 1.5rem 4em 2em 4em;
+    }
+  }
+}
