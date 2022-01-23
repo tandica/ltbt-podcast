@@ -2,6 +2,7 @@
   background: #5c3a15;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 2em 7em 2em 6em;
   font-family: "Cardo", serif;
 
@@ -35,12 +36,39 @@
     flex-direction: column;
 
     a {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
       color: #fff;
       text-decoration: none;
       &:hover {
         color: #ebdab6;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 2em 0em 2em 0em;
+
+    .footer-logo {
+      margin: 0 auto;
+    }
+
+    .footer-social-icons-container {
+      margin: 0 auto;
+      margin-top: 2rem;
+
+      a {
+        .footer-social-icons {
+          margin: 0rem 1rem 0rem 0rem;
+        }
+      }
+    }
+
+    .footer-pagelinks {
+      text-align: center;
+      margin-top: 2rem;
     }
   }
 }
