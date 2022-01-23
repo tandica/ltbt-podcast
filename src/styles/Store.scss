@@ -1,0 +1,18 @@
+.store-header-image {
+  background-image: url(../assets/8.png);
+  height: 650px;
+  min-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.store-container {
+  font-family: "Cardo", serif;
+
+  .store-title {
+    text-align: center;
+    padding-top: 3rem;
+    margin: 0em;
+    color: #3a1b0f;
+  }
+}
