@@ -5,6 +5,7 @@ import Episode from "./components/Episodes";
 import Events from "./components/Events";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Store from "./components/Store";
 import "./styles/App.scss";
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path="/contact" exact>
           <Contact />
+        </Route>
+        <Route path="/store" exact>
+          <Store />
         </Route>
         <div>
           <nav>
