@@ -10,6 +10,8 @@ export default function Store() {
       </div>
       <div className="store-container">
         <h1 className="store-title">SHOP OUR MERCH</h1>
+
+        <div className="products-container"></div>
       </div>
       <Footer />
     </div>

@@ -12,6 +12,8 @@ export default function Nav() {
         <a href="/about">ABOUT US</a>
         <a href="/store">STORE</a>
         <a href="/contact">CONTACT US</a>
+        <a href="/contact">Login</a>
+        <a href="/contact">Cart</a>
       </div>
     </div>
   );
