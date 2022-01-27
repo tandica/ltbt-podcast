@@ -15,4 +15,32 @@
     margin: 0em;
     color: #3a1b0f;
   }
+
+  .products-container {
+    display: flex;
+    // border: 1px solid red;
+
+    .products-list {
+      list-style: none;
+
+      .product {
+        // width: 50%;
+
+        .about-team-img {
+          width: 30%;
+          background-size: cover;
+        }
+
+        .product-name {
+          font-weight: bold;
+          font-size: 20px;
+        }
+
+        .product-price {
+          font-weight: normal;
+          font-size: 17px;
+        }
+      }
+    }
+  }
 }
