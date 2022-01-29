@@ -11,7 +11,7 @@ export default function Store() {
       </div>
       <div className="store-container">
         <h1 className="store-title">SHOP OUR MERCH</h1>
-
+        <button className="sidebar-button">&#9776;</button>
         <div className="products-container">
           <ul className="products-list">
             <li className="product">
@@ -27,3 +27,4 @@ export default function Store() {
     </div>
   );
 }
+//34 mins at video

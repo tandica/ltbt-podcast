@@ -16,8 +16,22 @@
     color: #3a1b0f;
   }
 
+  .sidebar-button {
+    font-size: 3rem;
+    padding: 0.2rem;
+    background: none;
+    border: none;
+    color: #3a1b0f;
+    border-radius: 10px;
+
+    &:hover {
+      background: #866042;
+    }
+  }
+
   .products-container {
     display: flex;
+    flex-wrap: wrap;
     // border: 1px solid red;
 
     .products-list {
@@ -34,6 +48,9 @@
         .product-name {
           font-weight: bold;
           font-size: 20px;
+          &:hover {
+            color: #866042;
+          }
         }
 
         .product-price {
