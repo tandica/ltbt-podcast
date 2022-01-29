@@ -1,0 +1,25 @@
+.sidebar {
+  position: fixed;
+  transform: translateX(-30rem);
+  width: 30rem;
+  background-color: gray;
+  height: 100%;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-button {
+  font-size: 3rem;
+  padding: 0.2rem;
+  background: none;
+  border: none;
+  color: #3a1b0f;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background: #866042;
+  }
+}
