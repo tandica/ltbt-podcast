@@ -49,9 +49,13 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
+      // justify-content: center;
+      justify-content: space-evenly;
 
       .product {
         // width: 50%;
+        margin-right: 2rem;
+        margin-left: 2rem;
 
         .about-team-img {
           width: 30%;

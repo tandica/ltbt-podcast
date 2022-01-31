@@ -1,3 +1,5 @@
+import image from "./assets/1.png";
+
 export const upcomingLiveShows = [
   {
     date: "August 3, 2022",
@@ -67,19 +69,19 @@ export const productData = {
     {
       name: "LTBT Sweater",
       price: 70,
-      image: "/assets/1.png",
+      image: { image },
       category: "Hoodies",
     },
     {
       name: "LTBT Keychain",
       price: 50,
-      image: "/assets/1.png",
+      image: "./assets/1.png",
       category: "Accessories",
     },
     {
       name: "LTBT Sticker",
       price: 20,
-      image: "/assets/1.png",
+      image: "./assets/1.png",
       category: "Stickers",
     },
   ],

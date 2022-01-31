@@ -34,7 +34,7 @@ export default function Store() {
                 <img
                   className="about-team-img"
                   src={product.image}
-                  alt="person"
+                  alt="ltbt merch"
                 />
                 <div className="product-name">{product.name}</div>
                 <div className="product-price">$ {product.price}</div>
