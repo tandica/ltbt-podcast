@@ -32,14 +32,19 @@ export default function Store() {
             {productData.products.map((product) => (
               <div className="product">
                 {" "}
-                <img
-                  className="about-team-img"
-                  src={product.image}
-                  alt="ltbt merch"
-                />
+                <Link to={"/store/" + product.id}>
+                  {" "}
+                  <img
+                    className="about-team-img"
+                    src={product.image}
+                    alt="ltbt merch"
+                  />
+                </Link>
                 <div className="product-name">
                   {" "}
-                  <Link to={"/store/" + product.id}>{product.name}</Link>
+                  <Link to={"/store/" + product.id} className="product-name">
+                    {product.name}
+                  </Link>
                 </div>
                 <div className="product-price">$ {product.price}</div>
               </div>

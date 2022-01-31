@@ -65,6 +65,9 @@
         .product-name {
           font-weight: bold;
           font-size: 20px;
+          text-decoration: none;
+          color: #3a1b0f;
+
           &:hover {
             color: #866042;
           }
@@ -73,6 +76,7 @@
         .product-price {
           font-weight: normal;
           font-size: 17px;
+          color: #3a1b0f;
         }
       }
     }
