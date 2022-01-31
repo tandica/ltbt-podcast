@@ -1,4 +1,5 @@
 import "../styles/Store.scss";
+import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import image from "../assets/1.png";
@@ -36,7 +37,10 @@ export default function Store() {
                   src={product.image}
                   alt="ltbt merch"
                 />
-                <div className="product-name">{product.name}</div>
+                <div className="product-name">
+                  {" "}
+                  <Link to={"/store/" + product.id}>{product.name}</Link>
+                </div>
                 <div className="product-price">$ {product.price}</div>
               </div>
             ))}

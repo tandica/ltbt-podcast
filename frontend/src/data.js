@@ -67,18 +67,21 @@ export const teamMember = [
 export const productData = {
   products: [
     {
+      id: 1,
       name: "LTBT Sweater",
       price: 70,
       image: { image },
       category: "Hoodies",
     },
     {
+      id: 2,
       name: "LTBT Keychain",
       price: 50,
       image: "./assets/1.png",
       category: "Accessories",
     },
     {
+      id: 3,
       name: "LTBT Sticker",
       price: 20,
       image: "./assets/1.png",
