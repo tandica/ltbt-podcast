@@ -41,12 +41,14 @@
   // }
 
   .products-container {
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
     // border: 1px solid red;
 
     .products-list {
       list-style: none;
+      display: flex;
+      flex-wrap: wrap;
 
       .product {
         // width: 50%;

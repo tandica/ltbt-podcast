@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import image from "../assets/1.png";
 import Sidebar from "./Sidebar";
+import { productData } from "../data";
 
 export default function Store() {
   return (
@@ -11,7 +12,7 @@ export default function Store() {
         <Nav />
       </div>
       <div className="store-container">
-        <Sidebar />
+        {/* <Sidebar /> */}
         {/* <aside className="sidebar">
           <h3>EXPLORE OUR CATEGORIES</h3>
           <ul>
@@ -26,14 +27,20 @@ export default function Store() {
         <h1 className="store-title">SHOP OUR MERCH</h1>
         {/* <button className="sidebar-button" onClick="openMenu()">&#9776;</button> */}
         <div className="products-container">
-          <ul className="products-list">
-            <li className="product">
-              {" "}
-              <img className="about-team-img" src={image} alt="person" />
-              <div className="product-name">Product Name</div>
-              <div className="product-price">$77</div>
-            </li>
-          </ul>
+          <div className="products-list">
+            {productData.products.map((product) => (
+              <div className="product">
+                {" "}
+                <img
+                  className="about-team-img"
+                  src={product.image}
+                  alt="person"
+                />
+                <div className="product-name">{product.name}</div>
+                <div className="product-price">$ {product.price}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <Footer />

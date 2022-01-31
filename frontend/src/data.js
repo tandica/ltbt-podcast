@@ -61,3 +61,26 @@ export const teamMember = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
   },
 ];
+
+export const productData = {
+  products: [
+    {
+      name: "LTBT Sweater",
+      price: 70,
+      image: "/assets/1.png",
+      category: "Hoodies",
+    },
+    {
+      name: "LTBT Keychain",
+      price: 50,
+      image: "/assets/1.png",
+      category: "Accessories",
+    },
+    {
+      name: "LTBT Sticker",
+      price: 20,
+      image: "/assets/1.png",
+      category: "Stickers",
+    },
+  ],
+};
