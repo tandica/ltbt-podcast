@@ -72,6 +72,7 @@ export const productData = {
       price: 70,
       image: { image },
       category: "Hoodies",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     {
       id: 2,
@@ -79,6 +80,7 @@ export const productData = {
       price: 50,
       image: "./assets/1.png",
       category: "Accessories",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     {
       id: 3,
@@ -86,6 +88,7 @@ export const productData = {
       price: 20,
       image: "./assets/1.png",
       category: "Stickers",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
   ],
 };
