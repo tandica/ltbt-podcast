@@ -4,9 +4,24 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import image from "../assets/1.png";
 import Sidebar from "./Sidebar";
-import { productData } from "../data";
+// import { productData } from "../data";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-export default function Store() {
+export default function Store(props) {
+  const [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data } = await axios.get("/api/store");
+      setProduct(data);
+    };
+    fetchData();
+    return () => {
+      //
+    };
+  }, []);
+
   return (
     <div>
       <div className="store-header-image">
@@ -29,7 +44,7 @@ export default function Store() {
         {/* <button className="sidebar-button" onClick="openMenu()">&#9776;</button> */}
         <div className="products-container">
           <div className="products-list">
-            {productData.products.map((product) => (
+            {products.map((product) => (
               <div className="product">
                 {" "}
                 <Link to={"/store/" + product.id}>
