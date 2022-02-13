@@ -10,17 +10,27 @@ import axios from "axios";
 
 export default function Store(props) {
   const [products, setProduct] = useState([]);
+  console.log("PRODUCTS", products);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get("/api/store");
+    axios.get("/api/store").then((data) => {
       setProduct(data);
-    };
-    fetchData();
+    });
+
+    // const fetchData = async () => {
+    //   const { data } = await axios.get("/api/store").then((res) => {
+    //     res.send(res.data);
+    //   });
+    //   setProduct(data);
+    //   console.log(data);
+    // };
+    // fetchData();
     return () => {
       //
     };
   }, []);
+
+  console.log("set prod", setProduct);
 
   return (
     <div>
