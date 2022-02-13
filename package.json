@@ -1,6 +1,5 @@
 {
   "name": "ltbt-podcast",
-  "proxy": "https://127.0.0.1:5000",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
@@ -19,6 +18,7 @@
   "homepage": "https://github.com/tandica/ltbt-podcast#readme",
   "dependencies": {
     "axios": "^0.25.0",
+    "cors": "^2.8.5",
     "express": "^4.17.2"
   },
   "devDependencies": {

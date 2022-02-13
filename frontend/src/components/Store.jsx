@@ -13,24 +13,17 @@ export default function Store(props) {
   console.log("PRODUCTS", products);
 
   useEffect(() => {
-    axios.get("/api/store").then((data) => {
-      setProduct(data);
-    });
-
-    // const fetchData = async () => {
-    //   const { data } = await axios.get("/api/store").then((res) => {
-    //     res.send(res.data);
-    //   });
+    // axios.get("/store").then((data) => {
     //   setProduct(data);
-    //   console.log(data);
-    // };
-    // fetchData();
-    return () => {
-      //
-    };
-  }, []);
+    // });
 
-  console.log("set prod", setProduct);
+    const fetchData = async () => {
+      const { data } = await axios.get("http://localhost:5000/api/store");
+      setProduct(data);
+      // console.log("here is data", data);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -55,7 +48,7 @@ export default function Store(props) {
         <div className="products-container">
           <div className="products-list">
             {products.map((product) => (
-              <div className="product">
+              <div key={product.id} className="product">
                 {" "}
                 <Link to={"/store/" + product.id}>
                   {" "}
