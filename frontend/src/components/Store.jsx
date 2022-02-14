@@ -74,4 +74,3 @@ export default function Store(props) {
     </div>
   );
 }
-//47 mins at video
