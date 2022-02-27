@@ -1,4 +1,10 @@
-function productlistReducer(state = { products: [] }, action) {
+import {
+  PRODUCT_LIST_FAIL,
+  PRODUCT_LIST_REQUEST,
+  PRODUCT_LIST_SUCCESS,
+} from "../constants/productConstants";
+
+function productListReducer(state = { products: [] }, action) {
   switch (action.type) {
     //if the case id this, it means that im going to send the request to the server to get the list of products
     case PRODUCT_LIST_REQUEST:
@@ -13,3 +19,5 @@ function productlistReducer(state = { products: [] }, action) {
       return state;
   }
 }
+
+export { productListReducer };
