@@ -10,13 +10,21 @@ app.use(cors());
 //const dataToSend = data.products;
 //console.log(dataToSend);
 
+//store page
 app.get("/api/store", (req, res) => {
-  //console.log("reqqqqq", data.products);
   res.send(data.products);
-  //console.log("***********", data.products);
-  //console.log(res);
+});
 
-  //res.send(products);
+//individual product page
+app.get("/api/store/:id", (req, res) => {
+  const productId = req.params.id;
+  const product = data.products.find((product) => product.id === productId);
+
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ msg: "Product not found." });
+  }
 });
 
 // axios.post("/api/store", (req, res) => {

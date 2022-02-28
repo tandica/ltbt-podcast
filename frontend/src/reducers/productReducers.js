@@ -1,4 +1,7 @@
 import {
+  PRODUCT_DETAILS_FAIL,
+  PRODUCT_DETAILS_REQUEST,
+  PRODUCT_DETAILS_SUCCESS,
   PRODUCT_LIST_FAIL,
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
@@ -20,4 +23,21 @@ function productListReducer(state = { products: [] }, action) {
   }
 }
 
-export { productListReducer };
+//reducer for individual product page
+function productDetailsReducer(state = { product: {} }, action) {
+  switch (action.type) {
+    //if the case id this, it means that im going to send the request to the server to get the list of products
+    case PRODUCT_DETAILS_REQUEST:
+      return { loading: true };
+    //get data from server
+    case PRODUCT_DETAILS_SUCCESS:
+      return { loading: false, products: action.payload };
+
+    case PRODUCT_DETAILS_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+}
+
+export { productListReducer, productDetailsReducer };
