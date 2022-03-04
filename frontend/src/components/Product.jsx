@@ -13,13 +13,13 @@ export default function Product(props) {
   // const product = productData.products.find(
   //   (productId) => productId.id === Number(id)
   // );
-
+  console.log("-----", props.id);
   const productDetails = useSelector((state) => state.productDetails);
   const { product, loading, error } = productDetails;
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(detailsProduct());
+    dispatch(detailsProduct(props.match.params.id));
 
     return () => {};
   }, []);

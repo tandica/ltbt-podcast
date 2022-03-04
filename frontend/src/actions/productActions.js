@@ -22,10 +22,11 @@ const listProducts = () => async (dispatch) => {
 
 //view product details
 const detailsProduct = (productId) => async (dispatch) => {
+  console.log("ID", productId);
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
     const { data } = await axios.get(
-      "http://localhost:5000/api/store" + productId
+      "http://localhost:5000/api/store/" + productId
     );
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
   } catch (error) {

@@ -9,17 +9,35 @@ app.use(cors());
 
 //const dataToSend = data.products;
 //console.log(dataToSend);
+// const output = data.products.find((product) => product.id);
+// console.log(output);
 
 //store page
 app.get("/api/store", (req, res) => {
   res.send(data.products);
 });
 
+//keep console.logging on the product variable to see what makes it undefined
 //individual product page
 app.get("/api/store/:id", (req, res) => {
   const productId = req.params.id;
-  const product = data.products.find((product) => product.id === productId);
+  //console.log(req.params.id);
 
+  // function checkID(x) {
+  //   x.id === productId;
+  // }
+
+  const product = data.products.find((product) => product.id === productId);
+  const product2 = data.products.find((product) => {
+    if (product.id === productId) {
+      console.log(productId);
+    } else {
+      product.id = productId;
+      console.log("hi");
+    }
+  });
+
+  //console.log("--------", product, product2);
   if (product) {
     res.send(product);
   } else {
