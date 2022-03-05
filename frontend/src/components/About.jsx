@@ -1,8 +1,8 @@
 import Nav from "./Nav";
 import Footer from "./Footer";
 import "../styles/About.scss";
-import { teamMember } from "../data";
-import image from "../assets/1.png";
+import { teamMember } from "../data/data";
+import image from "../images/1.png";
 
 export default function About() {
   return (

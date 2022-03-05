@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router();
-import { data } from "./data.js";
+import data from "./data.js";
 import axios from "axios";
 const cors = require("cors");
 
@@ -12,37 +12,38 @@ app.use(cors());
 // const output = data.products.find((product) => product.id);
 // console.log(output);
 
-//store page
-app.get("/api/store", (req, res) => {
-  res.send(data.products);
-});
-
 //keep console.logging on the product variable to see what makes it undefined
 //individual product page
 app.get("/api/store/:id", (req, res) => {
-  const productId = req.params.id;
+  //const productId = req.params.id;
   //console.log(req.params.id);
 
   // function checkID(x) {
   //   x.id === productId;
   // }
 
-  const product = data.products.find((product) => product.id === productId);
-  const product2 = data.products.find((product) => {
-    if (product.id === productId) {
-      console.log(productId);
-    } else {
-      product.id = productId;
-      console.log("hi");
-    }
-  });
+  const product = data.products.find((product) => product.id === req.params.id);
+  // const product2 = data.products.find((product) => {
+  //   if (product.id) {
+  //     product.id = productId;
+  //     //console.log(productId);
+  //   } else {
+  //     //product.id = productId;
+  //     console.log("hi");
+  //   }
+  //});
 
-  //console.log("--------", product, product2);
+  console.log("--------", typeof product2);
   if (product) {
     res.send(product);
   } else {
     res.status(404).send({ msg: "Product not found." });
   }
+});
+
+//store page
+app.get("/api/store", (req, res) => {
+  res.send(data.products);
 });
 
 // axios.post("/api/store", (req, res) => {

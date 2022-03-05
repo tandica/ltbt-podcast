@@ -2,7 +2,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import "../styles/Events.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { upcomingEvents, upcomingLiveShows } from "../data";
+import { upcomingEvents, upcomingLiveShows } from "../data/data";
 
 export default function Events() {
   return (

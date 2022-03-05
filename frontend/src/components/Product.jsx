@@ -1,5 +1,5 @@
 import "../styles/Product.scss";
-import { productData } from "../data";
+import { productData } from "../data/data";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ export default function Product(props) {
   // const product = productData.products.find(
   //   (productId) => productId.id === Number(id)
   // );
-  console.log("-----", props.id);
+  console.log("-----", props.match.params.id);
   const productDetails = useSelector((state) => state.productDetails);
   const { product, loading, error } = productDetails;
   const dispatch = useDispatch();

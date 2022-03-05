@@ -1,4 +1,5 @@
-import image from "./assets/1.png";
+// import image from ".//images/1.png";
+// import img from "./images/8.png";
 
 export const upcomingLiveShows = [
   {
@@ -64,31 +65,39 @@ export const teamMember = [
   },
 ];
 
-export const productData = {
+const productData = {
   products: [
     {
       id: 1,
       name: "LTBT Sweater",
+      slug: "ltbt-sweater",
       price: 70,
-      image: { image },
+      image: "",
       category: "Hoodies",
+      countInStock: 10,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     {
       id: 2,
       name: "LTBT Keychain",
+      slug: "ltbt-keychain",
       price: 50,
-      image: "./assets/1.png",
+      image: "",
       category: "Accessories",
+      countInStock: 9,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     {
       id: 3,
       name: "LTBT Sticker",
+      slug: "ltbt-sticker",
       price: 20,
-      image: "./assets/1.png",
+      image: "../images/6.png",
       category: "Stickers",
+      countInStock: 17,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
   ],
 };
+
+export default productData;
