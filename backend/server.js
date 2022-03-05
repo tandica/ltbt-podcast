@@ -1,3 +1,19 @@
+import express from "express";
+import productData from "./data.js";
+
+const app = express();
+
+app.get("/api/store", (req, res) => {
+  res.send(productData.products);
+});
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  console.log(`SERVER RUNNING ON PORT ${port}`);
+});
+
+//OLD CODE
 // import express from "express";
 // const router = express.Router();
 // import data from "./data.js";
