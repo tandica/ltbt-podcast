@@ -11,7 +11,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../actions/productActions";
 import productData from "../data/data";
 
-export default function Store(props) {
+function Store(props) {
+  const slugMap = productData.products.map((x) => {
+    console.log(x.slug);
+  });
+  console.log("******", slugMap);
+
   return (
     <div>
       <div className="store-header-image">
@@ -23,17 +28,17 @@ export default function Store(props) {
           <div className="products-list">
             {productData.products.map((product) => (
               <div className="product" key={product.slug}>
-                <a href={`/product/${product.slug}`}>
+                <Link to={`/store/${product.slug}`}>
                   <img
                     src={product.image}
                     alt={product.name}
                     className="about-team-img"
                   />
-                </a>
+                </Link>
                 <div className="product-info">
-                  <a href={`/product/${product.slug}`}>
+                  <Link to={`/store/${product.slug}`}>
                     <p className="product-name">{product.name}</p>
-                  </a>
+                  </Link>
                   <p className="product-price">
                     <strong> $ {product.price} </strong>
                   </p>
@@ -47,6 +52,9 @@ export default function Store(props) {
     </div>
   );
 }
+
+export default Store;
+
 // const [products, setProduct] = useState([]);
 
 //OLD CODE

@@ -5,17 +5,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { detailsProduct } from "../actions/productActions";
 
-export default function Product(props) {
+function Product(props) {
   const params = useParams();
   const { slug } = params;
 
-  // console.log(params);
+  console.log(params);
   return (
     <div>
       <h1>{slug}</h1>
     </div>
   );
 }
+
+export default Product;
+
 //use this hook to get product id
 // const { id } = useParams();
 
