@@ -1,20 +1,31 @@
-import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import {
-  productListReducer,
-  productDetailsReducer,
-} from "./reducers/productReducers";
-import thunk from "redux-thunk";
-//reducre is a function that gets a starte and action and returns a new state based on that action
-const initialState = {};
-const reducer = combineReducers({
-  productList: productListReducer,
-  productDetails: productDetailsReducer,
-});
+import { createContext, useReducer } from "react";
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  reducer,
-  initialState,
-  composeEnhancer(applyMiddleware(thunk))
-);
-export default store;
+export const Store = createContext();
+
+const initialState = {
+  cart: {
+    cartItems: [],
+  },
+};
+
+//update state in cart
+function reducer(state, action) {
+  switch (action.type) {
+    case "CART_ADD_ITEM":
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          cartItems: [...state.cart.cartItems, action.payload],
+        },
+      };
+    default:
+      return state;
+  }
+}
+
+export function StoreProvider(props) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const value = { state, dispatch: dispatch };
+  return <Store.Provider value={value}>{props.children}</Store.Provider>;
+}

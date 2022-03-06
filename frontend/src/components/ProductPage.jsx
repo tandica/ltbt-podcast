@@ -2,12 +2,14 @@ import "../styles/ProductPage.scss";
 import { productData } from "../data/data";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useReducer } from "react";
+import { useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import { detailsProduct } from "../actions/productActions";
 import LoadingBox from "./LoadingBox";
 import MessageBox from "./MessageBox";
 import { getError } from "../utils";
+import { Store } from "../Store";
+import Nav from "./Nav";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -46,29 +48,41 @@ function ProductPage(props) {
     fetchData();
   }, [slug]);
 
-  console.log(params);
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const addToCartHandler = () => {
+    ctxDispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...product, quantity: 1 },
+    });
+  };
+
   return loading ? (
     <LoadingBox />
   ) : error ? (
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
-    <div className="single-product-container">
-      <div className="product-info">
-        <div className="product-name">{product.name}</div>
-        <div className="product-descrption">{product.description}</div>
-        <div className="product-price">$ {product.price}</div>
-        {product.countInStock > 0 ? (
-          <p className="product-status">IN STOCK</p>
-        ) : (
-          <p className="product-status">OUT OF STOCK</p>
-        )}
-        {product.countInStock > 0 ? (
-          <button className="product-button">ADD TO CART</button>
-        ) : (
-          <button className="product-button-nostock">ADD TO CART</button>
-        )}
+    <div>
+      <Nav />
+      <div className="single-product-container">
+        <div className="product-info">
+          <div className="product-name">{product.name}</div>
+          <div className="product-descrption">{product.description}</div>
+          <div className="product-price">$ {product.price}</div>
+          {product.countInStock > 0 ? (
+            <p className="product-status">IN STOCK</p>
+          ) : (
+            <p className="product-status">OUT OF STOCK</p>
+          )}
+          {product.countInStock > 0 ? (
+            <button className="product-button" onClick={addToCartHandler}>
+              ADD TO CART
+            </button>
+          ) : (
+            <button className="product-button-nostock">ADD TO CART</button>
+          )}
+        </div>
+        <img src={product.image} alt={product.name}></img>
       </div>
-      <img src={product.image} alt={product.name}></img>
     </div>
   );
 }

@@ -1,6 +1,13 @@
 import "../styles/Nav.scss";
+import { Link } from "react-router-dom";
+import Badge from "react-bootstrap/Badge";
+import { useContext } from "react";
+import { Store } from "../Store";
 
 export default function Nav() {
+  const { state } = useContext(Store);
+  const { cart } = state;
+
   return (
     <div className="nav">
       <div className="nav-logo">
@@ -13,7 +20,12 @@ export default function Nav() {
         <a href="/store">STORE</a>
         <a href="/contact">CONTACT US</a>
         <a href="/contact">Login</a>
-        <a href="/contact">Cart</a>
+        <Link to="/contact">Cart</Link>
+        {cart.cartItems.length > 0 && (
+          <Badge pill bg="danger">
+            {cart.cartItems.length}
+          </Badge>
+        )}
       </div>
     </div>
   );
