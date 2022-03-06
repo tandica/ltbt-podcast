@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import logger from "use-reducer-logger";
 import Footer from "./Footer";
+import Product from "./Product";
 // import image from "../assets/1.png";
 import Sidebar from "./Sidebar";
 // import { productData } from "../data";
@@ -61,24 +62,7 @@ function Store() {
               <div>{error}</div>
             ) : (
               products?.map((product) => (
-                <div className="product" key={product.slug}>
-                  <Link to={`/store/${product.slug}`}>
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="about-team-img"
-                    />
-                  </Link>
-                  <div className="product-info">
-                    <Link to={`/store/${product.slug}`}>
-                      <p className="product-name">{product.name}</p>
-                    </Link>
-                    <p className="product-price">
-                      <strong> $ {product.price} </strong>
-                    </p>
-                    <button>Add to cart</button>
-                  </div>
-                </div>
+                <Product product={product} key={product.id} />
               ))
             )}
           </div>

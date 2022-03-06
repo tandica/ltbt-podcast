@@ -7,7 +7,7 @@ import Events from "./components/Events";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Store from "./components/Store";
-import Product from "./components/Product";
+import ProductPage from "./components/ProductPage";
 import "./styles/App.scss";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/store" element={<Store />} />
-        <Route path="/store/:slug" element={<Product />} />
+        <Route path="/store/:slug" element={<ProductPage />} />
       </Routes>
     </BrowserRouter>
   );
