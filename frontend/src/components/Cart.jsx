@@ -21,6 +21,7 @@ export default function Cart() {
     cart: { cartItems },
   } = state;
 
+  //add and minus buttons for items inside of cart
   const updateCartHandler = async (item, quantity) => {
     const { data } = await axios.get(`/api/store/${item._id}`);
 
@@ -33,7 +34,11 @@ export default function Cart() {
       type: "CART_ADD_ITEM",
       payload: { ...item, quantity },
     });
-    //navigate("/cart");
+  };
+
+  //remove item from cart
+  const removeItemHandler = (item) => {
+    ctxDispatch({ type: "CART_REMOVE_ITEM", payload: item });
   };
 
   return (
@@ -78,7 +83,10 @@ export default function Cart() {
                   <Col>{item.price}</Col>
                   <Col>
                     {" "}
-                    <Button variant="light">
+                    <Button
+                      variant="light"
+                      onClick={() => removeItemHandler(item)}
+                    >
                       <FontAwesomeIcon icon={faTrash} />
                     </Button>
                   </Col>
