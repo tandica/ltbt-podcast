@@ -5,6 +5,7 @@ import logger from "use-reducer-logger";
 import Footer from "./Footer";
 import Product from "./Product";
 import LoadingBox from "./LoadingBox";
+import MessageBox from "./MessageBox";
 // import image from "../assets/1.png";
 import Sidebar from "./Sidebar";
 // import { productData } from "../data";
@@ -60,7 +61,7 @@ function Store() {
             {loading ? (
               <LoadingBox />
             ) : error ? (
-              <div>{error}</div>
+              <MessageBox variant="danger">{error}</MessageBox>
             ) : (
               products?.map((product) => (
                 <Product product={product} key={product.slug} />

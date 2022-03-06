@@ -5,6 +5,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useReducer } from "react";
 import axios from "axios";
 import { detailsProduct } from "../actions/productActions";
+import LoadingBox from "./LoadingBox";
+import MessageBox from "./MessageBox";
+import { getError } from "../utils";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -36,7 +39,7 @@ function ProductPage(props) {
         const result = await axios.get(`/api/store/slug/${slug}`);
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: err.message });
+        dispatch({ type: "FETCH_FAIL", payload: getError(err) });
       }
     };
 
@@ -45,9 +48,9 @@ function ProductPage(props) {
 
   console.log(params);
   return loading ? (
-    <div>Loading...</div>
+    <LoadingBox />
   ) : error ? (
-    <div>{error}</div>
+    <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div className="single-product-container">
       <div className="product-info">
