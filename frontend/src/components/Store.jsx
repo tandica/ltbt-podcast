@@ -1,6 +1,7 @@
 import "../styles/Store.scss";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
+import logger from "use-reducer-logger";
 import Footer from "./Footer";
 // import image from "../assets/1.png";
 import Sidebar from "./Sidebar";
@@ -25,12 +26,11 @@ const reducer = (state, action) => {
 };
 
 function Store() {
-  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
+  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     products: [],
     loading: true,
     error: "",
   });
-  //const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,8 +41,6 @@ function Store() {
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
-      //setProducts(result.data);
-      //console.log("$$$$", result.data);
     };
 
     fetchData();
@@ -57,29 +55,36 @@ function Store() {
         <h1 className="store-title">NEW PRODUCTS</h1>
         <div className="products-container">
           <div className="products-list">
-            {products?.map((product) => (
-              <div className="product" key={product.slug}>
-                <Link to={`/store/${product.slug}`}>
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="about-team-img"
-                  />
-                </Link>
-                <div className="product-info">
+            {loading ? (
+              <div>Loading...</div>
+            ) : error ? (
+              <div>{error}</div>
+            ) : (
+              products?.map((product) => (
+                <div className="product" key={product.slug}>
                   <Link to={`/store/${product.slug}`}>
-                    <p className="product-name">{product.name}</p>
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="about-team-img"
+                    />
                   </Link>
-                  <p className="product-price">
-                    <strong> $ {product.price} </strong>
-                  </p>
-                  <button>Add to cart</button>
+                  <div className="product-info">
+                    <Link to={`/store/${product.slug}`}>
+                      <p className="product-name">{product.name}</p>
+                    </Link>
+                    <p className="product-price">
+                      <strong> $ {product.price} </strong>
+                    </p>
+                    <button>Add to cart</button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
