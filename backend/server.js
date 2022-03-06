@@ -22,6 +22,17 @@ app.get("/api/store/slug/:slug", (req, res) => {
   }
 });
 
+//individual product pages
+app.get("/api/store/:id", (req, res) => {
+  const product = productData.products.find((x) => x._id === req.params.id);
+
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: "Product not found." });
+  }
+});
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {

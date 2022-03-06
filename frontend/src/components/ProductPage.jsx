@@ -48,11 +48,25 @@ function ProductPage(props) {
     fetchData();
   }, [slug]);
 
+  //add to cart functionality
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const addToCartHandler = () => {
+  const { cart } = state;
+
+  const addToCartHandler = async () => {
+    //find if product exists in the cart
+    const existItem = cart.cartItems.find((item) => item._id === product._id);
+    //if it exists, increase quantity by 1 or set it to 1
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/store/${product._id}`);
+    //check if there's enough product in stock
+    if (data.countInStock < quantity) {
+      window.alert("Sorry, product is out of stock.");
+      return;
+    }
+
     ctxDispatch({
       type: "CART_ADD_ITEM",
-      payload: { ...product, quantity: 1 },
+      payload: { ...product, quantity },
     });
   };
 
