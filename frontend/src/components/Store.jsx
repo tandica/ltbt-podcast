@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import logger from "use-reducer-logger";
 import Footer from "./Footer";
 import Product from "./Product";
+import LoadingBox from "./LoadingBox";
 // import image from "../assets/1.png";
 import Sidebar from "./Sidebar";
 // import { productData } from "../data";
@@ -57,7 +58,7 @@ function Store() {
         <div className="products-container">
           <div className="products-list">
             {loading ? (
-              <div>Loading...</div>
+              <LoadingBox />
             ) : error ? (
               <div>{error}</div>
             ) : (

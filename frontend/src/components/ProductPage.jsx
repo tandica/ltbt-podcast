@@ -1,11 +1,9 @@
-import "../styles/Product.scss";
+import "../styles/ProductPage.scss";
 import { productData } from "../data/data";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useReducer } from "react";
-
 import axios from "axios";
-
 import { detailsProduct } from "../actions/productActions";
 
 const reducer = (state, action) => {
@@ -51,7 +49,24 @@ function ProductPage(props) {
   ) : error ? (
     <div>{error}</div>
   ) : (
-    <div>{product.name}</div>
+    <div className="single-product-container">
+      <div className="product-info">
+        <div className="product-name">{product.name}</div>
+        <div className="product-descrption">{product.description}</div>
+        <div className="product-price">$ {product.price}</div>
+        {product.countInStock > 0 ? (
+          <p className="product-status">IN STOCK</p>
+        ) : (
+          <p className="product-status">OUT OF STOCK</p>
+        )}
+        {product.countInStock > 0 ? (
+          <button className="product-button">ADD TO CART</button>
+        ) : (
+          <button className="product-button-nostock">ADD TO CART</button>
+        )}
+      </div>
+      <img src={product.image} alt={product.name}></img>
+    </div>
   );
 }
 

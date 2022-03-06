@@ -92,7 +92,7 @@ const productData = {
       name: "LTBT Sticker",
       slug: "ltbt-sticker",
       price: 20,
-      image: "../images/6.png",
+      image: "./frontend/src/images/6.png",
       category: "Stickers",
       countInStock: 17,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",

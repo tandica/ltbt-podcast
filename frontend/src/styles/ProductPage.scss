@@ -1,0 +1,27 @@
+.single-product-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  padding: 20px;
+
+  .product-info {
+    .product-name {
+    }
+
+    .product-description {
+    }
+
+    .product-price {
+    }
+
+    .product-status {
+    }
+
+    .product-button {
+    }
+
+    .product-button-nostock {
+      pointer-events: none;
+    }
+  }
+}
