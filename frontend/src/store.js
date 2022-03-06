@@ -2,16 +2,18 @@ import { createContext, useReducer } from "react";
 
 export const Store = createContext();
 
-//define initial state in cart
+//define initial state in cart based on local storage
 const initialState = {
   cart: {
-    cartItems: [],
+    cartItems: localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : [],
   },
 };
 
 //update state in cart
 //instead of creating duplicate items of the same product, we increase the amount of the one product if button is pressed more than once
-//second case: remove item from cart
+
 function reducer(state, action) {
   switch (action.type) {
     case "CART_ADD_ITEM":
@@ -24,12 +26,15 @@ function reducer(state, action) {
             item._id === existItem._id ? newItem : item
           )
         : [...state.cart.cartItems, newItem];
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
-
+    //second case: remove item from cart
     case "CART_REMOVE_ITEM": {
       const cartItems = state.cart.cartItems.filter(
         (item) => item._id !== action.payload._id
       );
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
       return { ...state, cart: { ...state.cart, cartItems } };
     }
 

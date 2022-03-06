@@ -6,7 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
@@ -20,6 +20,7 @@ export default function Cart() {
   const {
     cart: { cartItems },
   } = state;
+  const navigate = useNavigate();
 
   //add and minus buttons for items inside of cart
   const updateCartHandler = async (item, quantity) => {
@@ -39,6 +40,10 @@ export default function Cart() {
   //remove item from cart
   const removeItemHandler = (item) => {
     ctxDispatch({ type: "CART_REMOVE_ITEM", payload: item });
+  };
+
+  const checkoutHandler = () => {
+    navigate("/signin?redirect=/shipping");
   };
 
   return (
@@ -110,6 +115,7 @@ export default function Cart() {
                 <Button
                   type="button"
                   variant="primary"
+                  onClick={checkoutHandler}
                   disabled={cartItems.length === 0}
                 >
                   Proceed to Checkout
