@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Store } from "../Store";
 import MessageBox from "./MessageBox";
+import axios from "axios";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -19,6 +20,21 @@ export default function Cart() {
   const {
     cart: { cartItems },
   } = state;
+
+  const updateCartHandler = async (item, quantity) => {
+    const { data } = await axios.get(`/api/store/${item._id}`);
+
+    if (data.countInStock < quantity) {
+      window.alert("Sorry, product is out of stock.");
+      return;
+    }
+
+    ctxDispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...item, quantity },
+    });
+    //navigate("/cart");
+  };
 
   return (
     <div>
@@ -43,12 +59,17 @@ export default function Cart() {
                     <Link to={`/store/${item.slug}`}>{item.name}</Link>
                   </Col>
                   <Col>
-                    <Button variant="light" disabled={item.quantity === 1}>
+                    <Button
+                      variant="light"
+                      onClick={() => updateCartHandler(item, item.quantity - 1)}
+                      disabled={item.quantity === 1}
+                    >
                       <FontAwesomeIcon icon={faMinusCircle} />
                     </Button>
                     <span>{item.quantity}</span>
                     <Button
                       variant="light"
+                      onClick={() => updateCartHandler(item, item.quantity + 1)}
                       disabled={item.quantity === item.countInStock}
                     >
                       <FontAwesomeIcon icon={faPlusCircle} />
