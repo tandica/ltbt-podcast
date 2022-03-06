@@ -9,13 +9,20 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../actions/productActions";
-import productData from "../data/data";
+//import productData from "../data/data";
 
-function Store(props) {
-  const slugMap = productData.products.map((x) => {
-    console.log(x.slug);
-  });
-  console.log("******", slugMap);
+function Store() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios.get("/api/store");
+      setProducts(result.data);
+      console.log("$$$$", result.data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -26,7 +33,7 @@ function Store(props) {
         <h1 className="store-title">NEW PRODUCTS</h1>
         <div className="products-container">
           <div className="products-list">
-            {productData.products.map((product) => (
+            {products?.map((product) => (
               <div className="product" key={product.slug}>
                 <Link to={`/store/${product.slug}`}>
                   <img

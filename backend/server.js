@@ -1,8 +1,12 @@
 import express from "express";
 import productData from "./data.js";
+// const cors = require("cors");
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 
+//store route
 app.get("/api/store", (req, res) => {
   res.send(productData.products);
 });
