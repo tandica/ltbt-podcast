@@ -1,6 +1,6 @@
 import "../styles/ProductPage.scss";
 import { productData } from "../data/data";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useContext, useEffect, useReducer } from "react";
 import axios from "axios";
@@ -25,6 +25,7 @@ const reducer = (state, action) => {
 };
 
 function ProductPage(props) {
+  const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
 
@@ -68,6 +69,7 @@ function ProductPage(props) {
       type: "CART_ADD_ITEM",
       payload: { ...product, quantity },
     });
+    navigate("/cart");
   };
 
   return loading ? (

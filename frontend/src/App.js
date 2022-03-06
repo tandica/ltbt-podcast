@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Store from "./components/Store";
 import ProductPage from "./components/ProductPage";
+import Cart from "./components/Cart";
 import "./styles/App.scss";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/store" element={<Store />} />
         <Route path="/store/:slug" element={<ProductPage />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
