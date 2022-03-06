@@ -2,12 +2,48 @@ import "../styles/Product.scss";
 import { productData } from "../data/data";
 import { useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useReducer } from "react";
+
+import axios from "axios";
+
 import { detailsProduct } from "../actions/productActions";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "FETCH_REQUEST":
+      return { ...state, loading: true };
+    case "FETCH_SUCCESS":
+      return { ...state, products: action.payload, loading: false };
+    case "FETCH_FAIL":
+      return { ...state, loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
 
 function ProductPage(props) {
   const params = useParams();
   const { slug } = params;
+
+  const [{ loading, error, product }, dispatch] = useReducer(reducer, {
+    products: [],
+    loading: true,
+    error: "",
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      dispatch({ type: "FETCH_REQUEST" });
+      try {
+        const result = await axios.get(`/api/store/slug/${slug}`);
+        dispatch({ type: "FETCH_SUCCESS", payload: result.data });
+      } catch (err) {
+        dispatch({ type: "FETCH_FAIL", payload: err.message });
+      }
+    };
+
+    fetchData();
+  }, [slug]);
 
   console.log(params);
   return (

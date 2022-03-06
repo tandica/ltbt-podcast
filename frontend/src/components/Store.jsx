@@ -62,7 +62,7 @@ function Store() {
               <div>{error}</div>
             ) : (
               products?.map((product) => (
-                <Product product={product} key={product.id} />
+                <Product product={product} key={product.slug} />
               ))
             )}
           </div>
