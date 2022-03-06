@@ -13,7 +13,7 @@ const reducer = (state, action) => {
     case "FETCH_REQUEST":
       return { ...state, loading: true };
     case "FETCH_SUCCESS":
-      return { ...state, products: action.payload, loading: false };
+      return { ...state, product: action.payload, loading: false };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
     default:
@@ -26,7 +26,7 @@ function ProductPage(props) {
   const { slug } = params;
 
   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
-    products: [],
+    product: [],
     loading: true,
     error: "",
   });
@@ -46,10 +46,12 @@ function ProductPage(props) {
   }, [slug]);
 
   console.log(params);
-  return (
-    <div>
-      <h1>{slug}</h1>
-    </div>
+  return loading ? (
+    <div>Loading...</div>
+  ) : error ? (
+    <div>{error}</div>
+  ) : (
+    <div>{product.name}</div>
   );
 }
 

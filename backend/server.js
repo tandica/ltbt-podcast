@@ -11,6 +11,17 @@ app.get("/api/store", (req, res) => {
   res.send(productData.products);
 });
 
+//individual product pages
+app.get("/api/store/slug/:slug", (req, res) => {
+  const product = productData.products.find((x) => x.slug === req.params.slug);
+
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: "Product not found." });
+  }
+});
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
