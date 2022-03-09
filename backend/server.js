@@ -4,6 +4,7 @@ import productData from "./data.js";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import seedRouter from "./routes/seedRoutes.js";
 
 dotenv.config();
 mongoose
@@ -17,6 +18,7 @@ mongoose
 
 const app = express();
 app.use(cors());
+app.use("/api/seed", seedRouter);
 
 //store route
 app.get("/api/store", (req, res) => {

@@ -68,7 +68,7 @@ export const teamMember = [
 const productData = {
   products: [
     {
-      _id: "1",
+      // _id: "1",
       name: "LTBT Sweater",
       slug: "ltbt-sweater",
       price: 70,
@@ -78,7 +78,7 @@ const productData = {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     {
-      _id: "2",
+      // _id: "2",
       name: "LTBT Keychain",
       slug: "ltbt-keychain",
       price: 50,
@@ -88,7 +88,7 @@ const productData = {
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     {
-      _id: "3",
+      // _id: "3",
       name: "LTBT Sticker",
       slug: "ltbt-sticker",
       price: 20,
