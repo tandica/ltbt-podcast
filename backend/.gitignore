@@ -3,7 +3,7 @@
 # dependencies
 .env
 /node_modules
-
+admin.txt
 /.pnp
 .pnp.js
 
