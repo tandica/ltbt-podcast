@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
+    "mongoose": "^6.2.4",
     "nodemon": "^2.0.15"
   }
 }

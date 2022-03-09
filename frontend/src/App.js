@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Store from "./components/Store";
 import ProductPage from "./components/ProductPage";
 import Cart from "./components/Cart";
+import Login from "./components/Login";
 import "./styles/App.scss";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/store" element={<Store />} />
         <Route path="/store/:slug" element={<ProductPage />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

@@ -19,8 +19,8 @@ export default function Nav() {
         <a href="/about">ABOUT US</a>
         <a href="/store">STORE</a>
         <a href="/contact">CONTACT US</a>
-        <a href="/contact">Login</a>
-        <Link to="/contact">Cart</Link>
+        <a href="/login">Login</a>
+        <Link to="/cart">Cart</Link>
         {cart.cartItems.length > 0 && (
           <Badge pill bg="danger">
             {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
