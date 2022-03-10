@@ -69,7 +69,7 @@ export const teamMember = [
 const productData = {
   users: [
     {
-      name: "Tandi",
+      name: "ltbt",
       email: "admin@example.com",
       password: bcrypt.hashSync("123456"),
       isAdmin: true,
