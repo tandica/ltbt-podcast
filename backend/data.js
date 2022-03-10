@@ -1,5 +1,6 @@
 // import image from ".//images/1.png";
 // import img from "./images/8.png";
+import bcrypt from "bcryptjs";
 
 export const upcomingLiveShows = [
   {
@@ -66,6 +67,20 @@ export const teamMember = [
 ];
 
 const productData = {
+  users: [
+    {
+      name: "Tandi",
+      email: "admin@example.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: true,
+    },
+    {
+      name: "Light",
+      email: "user@example.com",
+      password: bcrypt.hashSync("123456"),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
       // _id: "1",
