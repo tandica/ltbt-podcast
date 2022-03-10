@@ -5,6 +5,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import seedRouter from "./routes/seedRoutes.js";
+import productRouter from "./routes/productRoutes.js";
 
 dotenv.config();
 mongoose
@@ -19,33 +20,12 @@ mongoose
 const app = express();
 app.use(cors());
 app.use("/api/seed", seedRouter);
+app.use("/api/store", productRouter);
 
 //store route
-app.get("/api/store", (req, res) => {
-  res.send(productData.products);
-});
-
-//individual product pages
-app.get("/api/store/slug/:slug", (req, res) => {
-  const product = productData.products.find((x) => x.slug === req.params.slug);
-
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: "Product not found." });
-  }
-});
-
-//individual product pages
-app.get("/api/store/:id", (req, res) => {
-  const product = productData.products.find((x) => x._id === req.params.id);
-
-  if (product) {
-    res.send(product);
-  } else {
-    res.status(404).send({ message: "Product not found." });
-  }
-});
+// app.get("/api/store", (req, res) => {
+//   res.send(productData.products);
+// });
 
 const port = process.env.PORT || 5000;
 
