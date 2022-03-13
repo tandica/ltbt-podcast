@@ -10,10 +10,13 @@ const initialState = {
     : null,
 
   cart: {
-    //get cart items based on user
+    //get shipping address, payment method and cart items based on user
     shippingAddress: localStorage.getItem("shippingAddress")
       ? JSON.parse(localStorage.getItem("shippingAddress"))
       : {},
+    paymentMethod: localStorage.getItem("paymentMethod")
+      ? localStorage.getItem("paymentMethod")
+      : "",
     cartItems: localStorage.getItem("cartItems")
       ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
@@ -56,6 +59,7 @@ function reducer(state, action) {
         cart: {
           cartItems: [],
           shippingAddress: {},
+          paymentMethod: "",
         },
       };
     //update shipping address with data from payload
@@ -63,6 +67,12 @@ function reducer(state, action) {
       return {
         ...state,
         cart: { ...state.cart, shippingAddress: action.payload },
+      };
+    //save payment method
+    case "SAVE_PAYMENT_METHOD":
+      return {
+        ...state,
+        cart: { ...state.cart, paymentMethod: action.payload },
       };
     default:
       return state;

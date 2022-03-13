@@ -13,6 +13,7 @@ import Login from "./components/Login";
 import "./styles/App.scss";
 import ShippingPage from "./components/ShippingPage";
 import Register from "./components/Register";
+import PaymentPage from "./components/PaymentPage";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/shipping" element={<ShippingPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
       </Routes>
     </BrowserRouter>
   );

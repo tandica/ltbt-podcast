@@ -60,7 +60,7 @@ export default function Register() {
   return (
     <Container className="small-container">
       <Helmet>
-        <title>Sign Up</title>
+        <title>LTBT | Register</title>
       </Helmet>
       <h1 className="my-3">Sign Up</h1>
       <Form onSubmit={submitHandler}>
