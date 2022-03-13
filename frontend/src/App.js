@@ -1,7 +1,5 @@
 import React from "react";
 import "react-toastify/dist/ReactToastify.css";
-
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { BrowserRouter, Link, Route, Routes, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Episodes from "./components/Episodes";
@@ -14,6 +12,7 @@ import Cart from "./components/Cart";
 import Login from "./components/Login";
 import "./styles/App.scss";
 import ShippingPage from "./components/ShippingPage";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -28,6 +27,7 @@ function App() {
         <Route path="/store/:slug" element={<ProductPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/shipping" element={<ShippingPage />} />
       </Routes>
     </BrowserRouter>

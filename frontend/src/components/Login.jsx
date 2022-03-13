@@ -88,8 +88,7 @@ export default function Login() {
           </button>
         </div>
         <div>
-          New customer?{" "}
-          <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
+          New customer? <Link to={`/register`}>Create your account</Link>
         </div>
       </form>
     </div>
