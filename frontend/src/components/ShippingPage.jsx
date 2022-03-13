@@ -4,16 +4,23 @@ import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Store } from "../Store";
+import CheckoutSteps from "./CheckoutSteps";
 
 export default function ShippingPage() {
   const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(Store);
+  const {
+    userInfo,
+    cart: { shippingAddress },
+  } = state;
 
-  const [fullName, setFullName] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [country, setCountry] = useState("");
+  const [fullName, setFullName] = useState(shippingAddress.fullName || "");
+  const [address, setAddress] = useState(shippingAddress.address || "");
+  const [city, setCity] = useState(shippingAddress.city || "");
+  const [postalCode, setPostalCode] = useState(
+    shippingAddress.postalCode || ""
+  );
+  const [country, setCountry] = useState(shippingAddress.country || "");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -41,11 +48,19 @@ export default function ShippingPage() {
     navigate("/payment");
   };
 
+  //if there is no user info, redirect to login
+  useEffect(() => {
+    if (!userInfo) {
+      navigate("/login?redirect=/shipping");
+    }
+  }, [userInfo, navigate]);
+
   return (
     <div>
       <Helmet>
         <title>LTBT | Shipping</title>
       </Helmet>
+      <CheckoutSteps step1 step2></CheckoutSteps>
       <div className="container small-container">
         <h1>Shipping Address</h1>
         <Form onSubmit={submitHandler}>
