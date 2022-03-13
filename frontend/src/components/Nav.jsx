@@ -7,8 +7,13 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { LinkContainer } from "react-router-bootstrap";
 
 export default function Nav() {
-  const { state } = useContext(Store);
+  const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
+
+  const signoutHandler = () => {
+    ctxDispatch({ type: "USER_SIGNOUT" });
+    localStorage.removeItem("userInfo");
+  };
 
   return (
     <div className="nav">
@@ -29,18 +34,32 @@ export default function Nav() {
           </Badge>
         )}
         {userInfo ? (
-          <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
-            <LinkContainer to="/profile">
-              <NavDropdown.Item>User Profile</NavDropdown.Item>
-            </LinkContainer>
-            <LinkContainer to="/orderhistory">
-              <NavDropdown.Item>Order History</NavDropdown.Item>
-            </LinkContainer>
+          <NavDropdown
+            title={userInfo.name}
+            id="navbarScrollingDropdown"
+            className="dropdown"
+          >
+            <NavDropdown.Item href="/profile" className="dropdown-item">
+              My Profile
+            </NavDropdown.Item>
+            <NavDropdown.Item href="/orderhistory" className="dropdown-item">
+              Order History
+            </NavDropdown.Item>
             <NavDropdown.Divider />
+
+            <NavDropdown.Item href="#action5">
+              <Link
+                to="#signout"
+                onClick={signoutHandler}
+                className="dropdown-signout"
+              >
+                Sign Out
+              </Link>
+            </NavDropdown.Item>
           </NavDropdown>
         ) : (
-          <Link to="/user" className="nav-link">
-            SignIn
+          <Link className="nav-link" to="/signin">
+            Sign In
           </Link>
         )}
       </div>

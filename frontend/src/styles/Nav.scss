@@ -1,6 +1,6 @@
 .nav {
   color: rgb(255, 255, 255);
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.164);
   display: flex;
   justify-content: space-between;
   margin: 0rem 4rem 1rem 4rem;
@@ -19,14 +19,23 @@
   }
 
   .nav-items {
-    color: #fff;
-
     a {
       margin-right: 2rem;
       color: #fff;
+
       text-decoration: none;
       &:hover {
         color: #ebdab6;
+      }
+    }
+
+    .dropdown {
+      .dropdown-item {
+        color: black;
+      }
+
+      .dropdown-signout {
+        color: black;
       }
     }
   }
