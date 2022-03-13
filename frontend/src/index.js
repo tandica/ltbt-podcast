@@ -5,6 +5,7 @@ import "../src/styles/index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 //import store from "./store";
 import { StoreProvider } from "./Store";
 

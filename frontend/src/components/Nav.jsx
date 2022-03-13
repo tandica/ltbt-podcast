@@ -4,7 +4,9 @@ import Badge from "react-bootstrap/Badge";
 import { useContext } from "react";
 import { Store } from "../Store";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { LinkContainer } from "react-router-bootstrap";
+import "react-toastify/dist/ReactToastify.css";
+
+import { ToastContainer } from "react-toastify";
 
 export default function Nav() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -17,6 +19,7 @@ export default function Nav() {
 
   return (
     <div className="nav">
+      <ToastContainer position="bottom-center" limit={1} />
       <div className="nav-logo">
         <a href="/">LTBT</a>
       </div>
@@ -47,7 +50,7 @@ export default function Nav() {
             </NavDropdown.Item>
             <NavDropdown.Divider />
 
-            <NavDropdown.Item href="#action5">
+            <NavDropdown.Item>
               <Link
                 to="#signout"
                 onClick={signoutHandler}
@@ -58,7 +61,7 @@ export default function Nav() {
             </NavDropdown.Item>
           </NavDropdown>
         ) : (
-          <Link className="nav-link" to="/signin">
+          <Link className="nav-link" to="/login">
             Sign In
           </Link>
         )}

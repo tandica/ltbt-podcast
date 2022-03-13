@@ -44,7 +44,7 @@ function reducer(state, action) {
     //update user info based on data from the backend
     case "USER_SIGNIN":
       return { ...state, userInfo: action.payload };
-
+    //case where user is signed out
     case "USER_SIGNOUT":
       return { ...state, userInfo: null };
     default:

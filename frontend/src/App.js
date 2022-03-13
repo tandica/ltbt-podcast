@@ -1,4 +1,6 @@
 import React from "react";
+import "react-toastify/dist/ReactToastify.css";
+
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { BrowserRouter, Link, Route, Routes, Switch } from "react-router-dom";
 import Home from "./components/Home";

@@ -1,7 +1,10 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Store } from "../Store";
+import { toast } from "react-toastify";
+import { getError } from "../utils";
+import { Alert } from "react-bootstrap";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -14,6 +17,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { userInfo } = state;
 
   //post request to users
   const submitHandler = async (e) => {
@@ -27,10 +31,18 @@ export default function Login() {
       ctxDispatch({ type: "USER_SIGNIN", payload: data });
       localStorage.setItem("userInfo", JSON.stringify(data));
       navigate(redirect || "/");
-    } catch {
+    } catch (err) {
       alert("Invalid email or password.");
     }
   };
+
+  //if user info exists, redirect them to the redirect variable
+  //makes it impossible for logged in user to see the sign in screen
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirect);
+    }
+  }, [navigate, redirect, userInfo]);
 
   return (
     <div>
