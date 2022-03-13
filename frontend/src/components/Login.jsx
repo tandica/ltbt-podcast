@@ -5,6 +5,7 @@ import { Store } from "../Store";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
 import { Alert } from "react-bootstrap";
+import { Helmet } from "react-helmet-async";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -46,6 +47,9 @@ export default function Login() {
 
   return (
     <div>
+      <Helmet>
+        <title>LTBT | Login</title>
+      </Helmet>
       <form>
         <div className="mb-3 text-left">
           <label for="input-email" class="label-name">

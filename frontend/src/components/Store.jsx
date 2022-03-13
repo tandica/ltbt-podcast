@@ -8,6 +8,7 @@ import LoadingBox from "./LoadingBox";
 import MessageBox from "./MessageBox";
 import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -45,6 +46,9 @@ function Store() {
 
   return (
     <div>
+      <Helmet>
+        <title>LTBT | Store</title>
+      </Helmet>
       <div className="store-header-image">
         <Nav />
       </div>

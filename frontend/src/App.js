@@ -13,6 +13,7 @@ import ProductPage from "./components/ProductPage";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
 import "./styles/App.scss";
+import ShippingPage from "./components/ShippingPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/store/:slug" element={<ProductPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/shipping" element={<ShippingPage />} />
       </Routes>
     </BrowserRouter>
   );
