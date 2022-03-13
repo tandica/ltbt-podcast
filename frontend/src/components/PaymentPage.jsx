@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useContext, useState, useEffect } from "react";
-
-// import { useContext } from "react";
 import { Store } from "../Store";
-// import { useEffect } from "react";
 
 export default function PaymentPage() {
   const navigate = useNavigate();
