@@ -1,12 +1,12 @@
 import express from "express";
 import productData from "./data.js";
-// const cors = require("cors");
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import seedRouter from "./routes/seedRoutes.js";
 import productRouter from "./routes/productRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
 
 dotenv.config();
 mongoose
@@ -27,6 +27,7 @@ app.use(cors());
 app.use("/api/seed", seedRouter);
 app.use("/api/store", productRouter);
 app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
 
 //store route
 // app.get("/api/store", (req, res) => {

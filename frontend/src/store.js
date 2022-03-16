@@ -28,6 +28,7 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
+    //add items to cart
     case "CART_ADD_ITEM":
       const newItem = action.payload;
       const existItem = state.cart.cartItems.find(
@@ -48,6 +49,9 @@ function reducer(state, action) {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+    //clear cart
+    case "CART_CLEAR":
+      return { ...state, cart: { ...state.cart, cartItems: [] } };
     //update user info based on data from the backend
     case "USER_SIGNIN":
       return { ...state, userInfo: action.payload };
