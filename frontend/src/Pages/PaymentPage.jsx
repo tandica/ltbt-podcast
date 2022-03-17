@@ -1,4 +1,4 @@
-import CheckoutSteps from "./CheckoutSteps";
+import CheckoutSteps from "../components/CheckoutSteps";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";

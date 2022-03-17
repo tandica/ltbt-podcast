@@ -1,5 +1,5 @@
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 import "../styles/About.scss";
 import { teamMember } from "../data/data";
 import image from "../images/1.png";

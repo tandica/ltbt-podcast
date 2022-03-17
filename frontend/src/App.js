@@ -1,20 +1,20 @@
 import React from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter, Link, Route, Routes, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import Episodes from "./components/Episodes";
-import Events from "./components/Events";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Store from "./components/Store";
-import ProductPage from "./components/ProductPage";
+import Home from "./Pages/Home";
+import Episodes from "./Pages/Episodes";
+import Events from "./Pages/Events";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Store from "./Pages/Store";
+import ProductPage from "./Pages/ProductPage";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
 import "./styles/App.scss";
-import ShippingPage from "./components/ShippingPage";
+import ShippingPage from "./Pages/ShippingPage";
 import Register from "./components/Register";
-import PaymentPage from "./components/PaymentPage";
-import PlaceOrder from "./components/PlaceOrderPage";
+import PaymentPage from "./Pages/PaymentPage";
+import PlaceOrder from "./Pages/PlaceOrderPage";
 
 function App() {
   return (

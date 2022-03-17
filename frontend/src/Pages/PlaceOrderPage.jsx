@@ -1,4 +1,4 @@
-import CheckoutSteps from "./CheckoutSteps";
+import CheckoutSteps from "../components/CheckoutSteps";
 import { Helmet } from "react-helmet-async";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,7 +10,7 @@ import { useContext, useEffect, useReducer } from "react";
 import { Store } from "../Store";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
-import { Axios } from "axios";
+import axios from "axios";
 import LoadingBox from "../components/LoadingBox";
 
 //reducer for creating an order
@@ -57,7 +57,8 @@ export default function PlaceOrder() {
   const placeOrderHandler = async () => {
     try {
       dispatch({ type: "CREATE_REQUEST" });
-      const { data } = await Axios.post(
+
+      const { data } = await axios.post(
         "/api/orders",
         {
           orderItems: cart.cartItems,
@@ -74,7 +75,6 @@ export default function PlaceOrder() {
           },
         }
       );
-      //after sending the order, clear cart and redirect user to order id page
       ctxDispatch({ type: "CART_CLEAR" });
       dispatch({ type: "CREATE_SUCCESS" });
       localStorage.removeItem("cartItems");
@@ -136,7 +136,7 @@ export default function PlaceOrder() {
                           alt={item.name}
                           className="img-fluid rounded img-thumbnail"
                         ></img>{" "}
-                        <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                        <Link to={`/store/${item.slug}`}>{item.name}</Link>
                       </Col>
                       <Col md={3}>
                         <span>{item.quantity}</span>

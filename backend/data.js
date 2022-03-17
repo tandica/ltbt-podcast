@@ -2,6 +2,8 @@
 // import img from "./images/8.png";
 import bcrypt from "bcryptjs";
 
+// import imagetest from "../frontend/src/images/2.jpg"
+
 export const upcomingLiveShows = [
   {
     date: "August 3, 2022",
@@ -83,31 +85,28 @@ const productData = {
   ],
   products: [
     {
-      // _id: "1",
       name: "LTBT Sweater",
       slug: "ltbt-sweater",
       price: 70,
-      image: "",
+      image: "/images/1.png",
       category: "Hoodies",
       countInStock: 10,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     {
-      // _id: "2",
       name: "LTBT Keychain",
       slug: "ltbt-keychain",
       price: 50,
-      image: "",
+      image: "/images/1.png",
       category: "Accessories",
       countInStock: 9,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     },
     {
-      // _id: "3",
       name: "LTBT Sticker",
       slug: "ltbt-sticker",
       price: 20,
-      image: "./frontend/src/images/6.png",
+      image: "/images/1.png",
       category: "Stickers",
       countInStock: 17,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",

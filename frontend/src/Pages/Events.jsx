@@ -1,8 +1,9 @@
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 import "../styles/Events.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { upcomingEvents, upcomingLiveShows } from "../data/data";
+// import { upcomingEvents, upcomingLiveShows } from "../../data/data";
+import { upcomingEvents, upcomingLiveShows } from "../data/data.js";
 
 export default function Events() {
   return (

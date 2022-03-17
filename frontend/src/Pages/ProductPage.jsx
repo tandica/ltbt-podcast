@@ -4,11 +4,12 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useContext, useEffect, useReducer } from "react";
 import axios from "axios";
-import LoadingBox from "./LoadingBox";
-import MessageBox from "./MessageBox";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 import { getError } from "../utils";
 import { Store } from "../Store";
-import Nav from "./Nav";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -98,6 +99,7 @@ function ProductPage(props) {
         </div>
         <img src={product.image} alt={product.name}></img>
       </div>
+      <Footer />
     </div>
   );
 }

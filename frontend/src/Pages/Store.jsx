@@ -1,11 +1,11 @@
 import "../styles/Store.scss";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
+import Nav from "../components/Nav";
 import logger from "use-reducer-logger";
-import Footer from "./Footer";
-import Product from "./Product";
-import LoadingBox from "./LoadingBox";
-import MessageBox from "./MessageBox";
+import Footer from "../components/Footer";
+import Product from "../components/Product";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
