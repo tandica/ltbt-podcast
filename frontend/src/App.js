@@ -16,6 +16,7 @@ import Register from "./components/Register";
 import PaymentPage from "./Pages/PaymentPage";
 import PlaceOrder from "./Pages/PlaceOrderPage";
 import OrderPage from "./Pages/OrderPage";
+import OrderHistoryPage from "./Pages/OrderHistoryPage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/order" element={<PlaceOrder />} />
         <Route path="/order/:id" element={<OrderPage />} />
+        <Route path="/orderhistory" element={<OrderHistoryPage />} />
       </Routes>
     </BrowserRouter>
   );
