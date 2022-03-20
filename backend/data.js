@@ -3,9 +3,9 @@
 import bcrypt from "bcryptjs";
 
 // import imagetest from "../frontend/src/images/2.jpg"
-// import img from "../frontend/public/images/placeholder-image.png";
 import path from "path";
 path.extname("../frontend/public/images/placeholder-image.png"); // .png
+// import img from "../frontend/public/images/placeholder-image.png";
 
 const productData = {
   users: [
@@ -27,8 +27,7 @@ const productData = {
       name: "LTBT Sweater",
       slug: "ltbt-sweater",
       price: 70,
-      image:
-        "https://drive.google.com/file/d/15eCTxKoxz8Yft27msGEL8OaGuInDVpJ4/view?usp=sharing",
+      image: "../frontend/public/images/placeholder-image.png",
       category: "Hoodies",
       countInStock: 10,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",

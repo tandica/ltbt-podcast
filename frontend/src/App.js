@@ -15,6 +15,7 @@ import ShippingPage from "./Pages/ShippingPage";
 import Register from "./components/Register";
 import PaymentPage from "./Pages/PaymentPage";
 import PlaceOrder from "./Pages/PlaceOrderPage";
+import OrderPage from "./Pages/OrderPage";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/shipping" element={<ShippingPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/order" element={<PlaceOrder />} />
+        <Route path="/order/:id" element={<OrderPage />} />
       </Routes>
     </BrowserRouter>
   );

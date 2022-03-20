@@ -81,7 +81,7 @@ export default function PlaceOrder() {
       navigate(`/order/${data.order._id}`);
     } catch (err) {
       dispatch({ type: "CREATE_FAIL" });
-      toast.error(getError(err));
+      alert(getError(err));
     }
   };
 
