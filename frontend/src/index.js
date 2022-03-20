@@ -1,5 +1,4 @@
 import React from "react";
-// import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
 import "../src/styles/index.scss";
 import { HelmetProvider } from "react-helmet-async";
@@ -7,14 +6,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
-//import store from "./store";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { StoreProvider } from "./Store";
 
 ReactDOM.render(
   <React.StrictMode>
     <StoreProvider>
       <HelmetProvider>
-        <App />
+        <PayPalScriptProvider deferLoading={true}>
+          <App />
+        </PayPalScriptProvider>
       </HelmetProvider>
     </StoreProvider>
   </React.StrictMode>,
