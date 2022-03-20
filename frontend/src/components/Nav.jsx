@@ -17,6 +17,7 @@ export default function Nav() {
     localStorage.removeItem("userInfo");
     localStorage.removeItem("shippingAddress");
     localStorage.removeItem("paymentMethod");
+    window.location.href = "/";
   };
 
   return (
