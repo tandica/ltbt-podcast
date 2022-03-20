@@ -1,7 +1,7 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/About.scss";
-import { teamMember } from "../data/data";
+import { teamMember } from "../data";
 import image from "../images/1.png";
 
 export default function About() {
@@ -32,9 +32,9 @@ export default function About() {
         <h1 className="about-team-title">MEET THE TEAM</h1>
         <div className="about-team-container-card">
           {teamMember.map((person) => (
-            <div className="about-team-card">
+            <div className="about-team-card" key={person.name}>
               <h3 className="about-team-name">{person.name}</h3>
-              <img className="about-team-img" src={image} alt="person" />
+              <img className="about-team-img" src={person.photo} alt="person" />
               <p className="about-team-description">{person.description}</p>
             </div>
           ))}

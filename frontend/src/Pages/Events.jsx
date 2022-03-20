@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import "../styles/Events.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { upcomingEvents, upcomingLiveShows } from "../../data/data";
-import { upcomingEvents, upcomingLiveShows } from "../data/data.js";
+import { upcomingEvents, upcomingLiveShows } from "../data.js";
 
 export default function Events() {
   return (

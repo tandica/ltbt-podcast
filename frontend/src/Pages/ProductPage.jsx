@@ -1,5 +1,5 @@
 import "../styles/ProductPage.scss";
-import { productData } from "../data/data";
+// import { productData } from "../data/data";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useContext, useEffect, useReducer } from "react";
