@@ -1,4 +1,4 @@
-import Nav from "../components/Nav";
+import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/Home.scss";
 
@@ -6,7 +6,7 @@ export default function Home(props) {
   return (
     <div>
       <div className="homepage-header-image">
-        <Nav />
+        <Navv />
       </div>
       <div className="homepage-text-container">
         <h1 className="homepage-text-title">TITLE</h1>
