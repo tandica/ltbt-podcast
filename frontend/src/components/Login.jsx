@@ -36,7 +36,7 @@ export default function Login() {
       localStorage.setItem("userInfo", JSON.stringify(data));
       navigate(redirect || "/");
     } catch (err) {
-      alert("Invalid email or password.");
+      toast.error("Invalid email or password.");
     }
   };
 

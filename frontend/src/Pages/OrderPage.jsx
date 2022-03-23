@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+import { toast } from "react-toastify";
 
 //reducer function
 function reducer(state, action) {
@@ -82,16 +83,16 @@ export default function OrderPage() {
           }
         );
         dispatch({ type: "PAY_SUCCESS", payload: data });
-        alert("Order is paid");
+        toast.success("Order is paid");
       } catch (err) {
         dispatch({ type: "PAY_FAIL", payload: getError(err) });
-        alert(getError(err));
+        toast.error(getError(err));
       }
     });
   }
 
   function onError(err) {
-    alert(getError(err));
+    toast.error(getError(err));
   }
 
   //get orders and load paypal functionality

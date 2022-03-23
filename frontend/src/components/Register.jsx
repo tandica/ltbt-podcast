@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 import { Store } from "../Store";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
-import { Alert } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 
 export default function Register() {
@@ -30,7 +29,7 @@ export default function Register() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      toast.error("Passwords do not match");
       return;
     }
 
@@ -45,7 +44,7 @@ export default function Register() {
       localStorage.setItem("userInfo", JSON.stringify(data));
       navigate(redirect || "/");
     } catch (err) {
-      alert("Invalid email or password.");
+      toast.error("Invalid email or password.");
     }
   };
 
