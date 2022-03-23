@@ -8,8 +8,9 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import { getError } from "../utils";
 import { Store } from "../Store";
-import Nav from "../components/Nav";
+import Navv from "../components/Nav";
 import Footer from "../components/Footer";
+import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -78,7 +79,10 @@ function ProductPage(props) {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <Nav />
+      <Helmet>
+        <title>LTBT | {product.name}</title>
+      </Helmet>
+      <Navv />
       <div className="single-product-container">
         <div className="product-info">
           <div className="product-name">{product.name}</div>

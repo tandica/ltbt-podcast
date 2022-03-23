@@ -17,11 +17,18 @@ export default function Navv() {
     window.location.href = "/";
   };
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/">LTBT</Navbar.Brand>
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      variant="dark"
+      className="py-5 px-md-5 nav"
+    >
+      <Navbar.Brand href="/" className="nav-logo">
+        LTBT
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="me-auto  w-100  justify-content-end">
           <Nav.Link href="/episodes">EPISODES</Nav.Link>
           <Nav.Link href="/events">EVENTS</Nav.Link>
           <Nav.Link href="/about">ABOUT US</Nav.Link>
@@ -29,9 +36,11 @@ export default function Navv() {
           <Nav.Link href="/contact">CONTACT US</Nav.Link>
           <Nav.Link href="/cart">Cart</Nav.Link>
           {cart.cartItems.length > 0 && (
-            <Badge pill bg="danger">
-              {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-            </Badge>
+            <span>
+              <Badge pill bg="danger">
+                {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+              </Badge>
+            </span>
           )}
           {userInfo ? (
             <NavDropdown
@@ -54,7 +63,7 @@ export default function Navv() {
               </NavDropdown.Item>
             </NavDropdown>
           ) : (
-            <NavDropdown.Item href="/login">Sign In</NavDropdown.Item>
+            <Nav.Link href="/login">Sign In</Nav.Link>
           )}
         </Nav>
       </Navbar.Collapse>

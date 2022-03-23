@@ -1,4 +1,4 @@
-import Nav from "../components/Nav";
+import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import {
   fab,
@@ -8,12 +8,16 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/Contact.scss";
+import { Helmet } from "react-helmet-async";
 
 export default function Contact() {
   return (
     <div>
+      <Helmet>
+        <title>LTBT | Contact Us</title>
+      </Helmet>
       <div className="homepage-header-image">
-        <Nav />
+        <Navv />
       </div>
       <div>
         <div className="contact-container">

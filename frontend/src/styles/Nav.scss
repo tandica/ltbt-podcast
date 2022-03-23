@@ -1,11 +1,12 @@
 .nav {
-  color: rgb(255, 255, 255);
+  // color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.164);
   display: flex;
   justify-content: space-between;
   margin: 0rem 4rem 1rem 4rem;
   padding-top: 2rem;
-  font-family: "Cardo", serif;
+  font-family: "Cardo", serif !important;
+  font-size: 35px;
   // z-index: 500;
 
   .nav-logo {
@@ -21,7 +22,7 @@
   .nav-items {
     a {
       margin-right: 2rem;
-      color: #fff;
+      color: #fff !important;
 
       text-decoration: none;
       &:hover {

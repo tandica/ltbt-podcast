@@ -6,6 +6,7 @@ import { Store } from "../Store";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
 import axios from "axios";
+import Navv from "../components/Nav";
 
 const reducer = (state, action) => {
   switch (action.type) {

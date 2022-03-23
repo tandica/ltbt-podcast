@@ -7,6 +7,7 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import { Store } from "../Store";
 import { getError } from "../utils";
+import Navv from "../components/Nav";
 
 const reducer = (state, action) => {
   switch (action.type) {

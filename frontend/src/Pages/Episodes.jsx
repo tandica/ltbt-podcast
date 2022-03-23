@@ -1,15 +1,19 @@
-import Nav from "../components/Nav";
+import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/Episodes.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSoundcloud, faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { faPodcast } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet-async";
 
 export default function Episodes() {
   return (
     <div>
+      <Helmet>
+        <title>LTBT | Episodes</title>
+      </Helmet>
       <div className="episodes-header-image">
-        <Nav />
+        <Navv />
       </div>
       <div className="episodes-container">
         <h1 className="episodes-title">LISTEN TO OUR PODCAST</h1>

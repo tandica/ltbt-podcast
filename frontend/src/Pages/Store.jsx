@@ -1,6 +1,6 @@
 import "../styles/Store.scss";
 import { Link } from "react-router-dom";
-import Nav from "../components/Nav";
+import Navv from "../components/Nav";
 import logger from "use-reducer-logger";
 import Footer from "../components/Footer";
 import Product from "../components/Product";
@@ -50,7 +50,7 @@ function Store() {
         <title>LTBT | Store</title>
       </Helmet>
       <div className="store-header-image">
-        <Nav />
+        <Navv />
       </div>
       <div className="store-container">
         <h1 className="store-title">NEW PRODUCTS</h1>

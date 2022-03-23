@@ -1,14 +1,18 @@
-import Nav from "../components/Nav";
+import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/About.scss";
 import { teamMember } from "../data";
 import image from "../images/1.png";
+import { Helmet } from "react-helmet-async";
 
 export default function About() {
   return (
     <div>
+      <Helmet>
+        <title>About LTBT</title>
+      </Helmet>
       <div className="about-header-image">
-        <Nav />
+        <Navv />
       </div>
       <div className="about-who-container">
         <div className="about-who">
