@@ -8,6 +8,9 @@ import { Store } from "../Store";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
 import { Helmet } from "react-helmet-async";
+import Navv from "../components/Nav";
+import Footer from "../components/Footer";
+import "../styles/Register.scss";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -57,49 +60,64 @@ export default function Register() {
   }, [navigate, redirect, userInfo]);
 
   return (
-    <Container className="small-container">
+    <div>
       <Helmet>
         <title>LTBT | Register</title>
       </Helmet>
-      <h1 className="my-3">Sign Up</h1>
-      <Form onSubmit={submitHandler}>
-        <Form.Group className="mb-3" controlId="name">
-          <Form.Label>Full Name</Form.Label>
-          <Form.Control onChange={(e) => setName(e.target.value)} required />
-        </Form.Group>
+      <div className="register-header-image">
+        <Navv />
+      </div>
+      <div className="register-container">
+        <h1 className="my-3">Register</h1>
+        <Form onSubmit={submitHandler}>
+          <Form.Group className="mb-3" controlId="name">
+            <Form.Label>Full Name</Form.Label>
+            <Form.Control
+              placeholder="What's your name?"
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="email">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <Form.Group className="mb-3" controlId="email">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              placeholder="Email..."
+              type="email"
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="password">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              placeholder="Create a password..."
+              type="password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
           <Form.Group className="mb-3" controlId="confirmPassword">
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
+              placeholder="Confirm your password..."
               type="password"
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </Form.Group>
-        </Form.Group>
-        <div className="mb-3">
-          <Button type="submit">Register</Button>
-        </div>
-        <div className="mb-3">
-          Already have an account?{" "}
-          <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
-        </div>
-      </Form>
-    </Container>
+          <div className="mb-3">
+            <Button type="submit" className="register-button">
+              SUBMIT
+            </Button>
+          </div>
+          <div className="mb-3 register-login-message">
+            Already have an account?{" "}
+            <Link to={`/signin?redirect=${redirect}`}>Login</Link>
+          </div>
+        </Form>
+      </div>
+      <Footer />
+    </div>
   );
 }
