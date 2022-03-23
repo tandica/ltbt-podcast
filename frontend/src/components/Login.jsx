@@ -2,10 +2,13 @@ import axios from "axios";
 import { useContext, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Store } from "../Store";
+import Navv from "../components/Nav";
+import Footer from "../components/Footer";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
 import { Alert } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
+import "../styles/Login.scss";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -50,47 +53,54 @@ export default function Login() {
       <Helmet>
         <title>LTBT | Login</title>
       </Helmet>
-      <form>
-        <div className="mb-3 text-left">
-          <label for="input-email" class="label-name">
-            Email address
-          </label>
-          <input
-            type="email"
-            required
-            className="form-control"
-            id="input-email"
-            aria-describedby="emailHelp"
-            placeholder="Email..."
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="mb-3 text-left">
-          <label for="input-password" class="label-name">
-            Password
-          </label>
-          <input
-            type="password"
-            required
-            className="form-control"
-            id="input-password"
-            placeholder="Password..."
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div>
-          <button
-            type="submit"
-            onClick={submitHandler}
-            className="btn btn-dark"
-          >
-            LOGIN
-          </button>
-        </div>
-        <div>
-          New customer? <Link to={`/register`}>Create your account</Link>
-        </div>
-      </form>
+      <div className="login-header-image">
+        <Navv />
+      </div>
+      <div className="login-container">
+        <h1 className="mb-3">Login</h1>
+        <form>
+          <div className="mb-3 text-left">
+            <label for="input-email" class="label-name">
+              Email address
+            </label>
+            <input
+              type="email"
+              required
+              className="form-control"
+              id="input-email"
+              aria-describedby="emailHelp"
+              placeholder="Email..."
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-3 text-left">
+            <label for="input-password" class="label-name">
+              Password
+            </label>
+            <input
+              type="password"
+              required
+              className="form-control"
+              id="input-password"
+              placeholder="Password..."
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div>
+            <button
+              type="submit"
+              onClick={submitHandler}
+              className="login-button"
+            >
+              LOGIN
+            </button>
+          </div>
+          <div className="login-register-message">
+            New customer? <Link to={`/register`}>Create your account</Link>
+          </div>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 }

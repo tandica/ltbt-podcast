@@ -58,12 +58,12 @@ export default function Navv() {
 
               <NavDropdown.Item>
                 <Link to="#signout" onClick={signoutHandler}>
-                  Sign Out
+                  Logout
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
           ) : (
-            <Nav.Link href="/login">Sign In</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
           )}
         </Nav>
       </Navbar.Collapse>
