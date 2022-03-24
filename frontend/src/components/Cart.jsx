@@ -14,6 +14,9 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import Card from "react-bootstrap/Card";
+import Footer from "../components/Footer";
+import "../styles/Cart.scss";
+import { Helmet } from "react-helmet-async";
 
 export default function Cart() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -48,83 +51,93 @@ export default function Cart() {
 
   return (
     <div>
-      <title>Shopping Cart</title>
-      <h1>Shopping Cart</h1>
-      <div>
-        {cartItems.length === 0 ? (
-          <MessageBox>
-            Cart is empty. <Link to="/store">Go to the LTBT Store</Link>
-          </MessageBox>
-        ) : (
-          <ListGroup>
-            {cartItems.map((item) => (
-              <ListGroup.Item key={item._id}>
-                <Row className="align-items-center">
-                  <Col>
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="img-fluid rounded img-thumbnail"
-                    ></img>
-                    <Link to={`/store/${item.slug}`}>{item.name}</Link>
-                  </Col>
-                  <Col>
-                    <Button
-                      variant="light"
-                      onClick={() => updateCartHandler(item, item.quantity - 1)}
-                      disabled={item.quantity === 1}
-                    >
-                      <FontAwesomeIcon icon={faMinusCircle} />
-                    </Button>
-                    <span>{item.quantity}</span>
-                    <Button
-                      variant="light"
-                      onClick={() => updateCartHandler(item, item.quantity + 1)}
-                      disabled={item.quantity === item.countInStock}
-                    >
-                      <FontAwesomeIcon icon={faPlusCircle} />
-                    </Button>
-                  </Col>
-                  <Col>{item.price}</Col>
-                  <Col>
-                    {" "}
-                    <Button
-                      variant="light"
-                      onClick={() => removeItemHandler(item)}
-                    >
-                      <FontAwesomeIcon icon={faTrash} />
-                    </Button>
-                  </Col>
-                </Row>
+      <Helmet>
+        <title>LTBT | Shopping Cart</title>
+      </Helmet>
+      <div className="cart-container">
+        <div>
+          <h1 className="mb-3">Shopping Cart</h1>
+          {cartItems.length === 0 ? (
+            <MessageBox>
+              Cart is empty. <Link to="/store">Go to the LTBT Store</Link>
+            </MessageBox>
+          ) : (
+            <ListGroup>
+              {cartItems.map((item) => (
+                <ListGroup.Item key={item._id}>
+                  <Row className="align-items-center">
+                    <Col>
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="img-fluid rounded img-thumbnail"
+                      ></img>
+                      <Link to={`/store/${item.slug}`}>{item.name}</Link>
+                    </Col>
+                    <Col>
+                      <Button
+                        variant="light"
+                        onClick={() =>
+                          updateCartHandler(item, item.quantity - 1)
+                        }
+                        disabled={item.quantity === 1}
+                      >
+                        <FontAwesomeIcon icon={faMinusCircle} />
+                      </Button>
+                      <span>{item.quantity}</span>
+                      <Button
+                        variant="light"
+                        onClick={() =>
+                          updateCartHandler(item, item.quantity + 1)
+                        }
+                        disabled={item.quantity === item.countInStock}
+                      >
+                        <FontAwesomeIcon icon={faPlusCircle} />
+                      </Button>
+                    </Col>
+                    <Col>{item.price}</Col>
+                    <Col>
+                      {" "}
+                      <Button
+                        variant="light"
+                        onClick={() => removeItemHandler(item)}
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </Button>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          )}{" "}
+        </div>
+        <Col>
+          <Card>
+            <Card.Body>
+              <ListGroup.Item variant="flush">
+                <h3>
+                  Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
+                  items) : ${" "}
+                  {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
+                </h3>
               </ListGroup.Item>
-            ))}
-          </ListGroup>
-        )}{" "}
+              <ListGroup.Item>
+                <div className="d-grid">
+                  <Button
+                    type="button"
+                    className="cart-button"
+                    onClick={checkoutHandler}
+                    disabled={cartItems.length === 0}
+                  >
+                    Proceed to Checkout
+                  </Button>
+                </div>
+              </ListGroup.Item>
+            </Card.Body>
+          </Card>
+        </Col>
       </div>
-      <Col>
-        <Card>
-          <Card.Body>
-            <ListGroup.Item variant="flush">
-              <h3>
-                Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)} items)
-                : $ {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
-              </h3>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <div className="d-grid">
-                <Button
-                  type="button"
-                  variant="primary"
-                  onClick={checkoutHandler}
-                  disabled={cartItems.length === 0}
-                >
-                  Proceed to Checkout
-                </Button>
-              </div>
-            </ListGroup.Item>
-          </Card.Body>
-        </Card>
-      </Col>
+      <Footer />
     </div>
   );
 }
