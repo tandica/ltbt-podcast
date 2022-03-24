@@ -48,3 +48,11 @@
     }
   }
 }
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .homepage-text-container {
+    .homepage-text-paragraph {
+      margin: 1em 3em 2em 3em;
+    }
+  }
+}

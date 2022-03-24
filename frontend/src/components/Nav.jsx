@@ -28,7 +28,10 @@ export default function Navv() {
         <Navbar.Brand href="/" className="nav-logo">
           LTBT
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="responsive-navbar-nav"
+          className="nav-toggle"
+        />
         <Navbar.Collapse id="responsive-navbar-nav" className="nav-dropdown">
           <Nav
             className="me-auto  w-100  justify-content-end"
