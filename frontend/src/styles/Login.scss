@@ -7,7 +7,7 @@
 }
 
 .login-container {
-  padding: 2em 9em 2em 9em;
+  padding: 2em 23em 2em 23em;
 
   .login-button {
     background-color: #866042;
@@ -16,7 +16,7 @@
     padding: 10px 28px 10px 28px;
     font-size: 17px;
     border-radius: 10px;
-    box-shadow: 4px 4px 20px 1px #27100049;
+    box-shadow: 4px 4px 20px 1px #27100027;
     &:hover {
       color: #271000;
       background-color: #ebdab6;
@@ -33,5 +33,17 @@
         color: #271000;
       }
     }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .login-container {
+    padding: 2em 2em 2em 2em;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .login-container {
+    padding: 2em 5em 2em 5em;
   }
 }

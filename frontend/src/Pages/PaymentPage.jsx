@@ -5,6 +5,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useContext, useState, useEffect } from "react";
 import { Store } from "../Store";
+import Footer from "../components/Footer";
+import "../styles/ShippingPage.scss";
 
 export default function PaymentPage() {
   const navigate = useNavigate();
@@ -36,11 +38,11 @@ export default function PaymentPage() {
   return (
     <div>
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
-      <div className="container small-container">
+      <div className="payment-container">
         <Helmet>
           <title>LTBT | Payment</title>
         </Helmet>
-        <h1 className="my-3">Choose a payment method</h1>
+        <h1 className="mb-4 mt-4">Choose a payment method</h1>
         <Form onSubmit={submitHandler}>
           <div className="mb-3">
             <Form.Check
@@ -62,11 +64,14 @@ export default function PaymentPage() {
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
-          <div className="mb-3">
-            <Button type="submit">Continue</Button>
+          <div className="mb-5">
+            <Button type="submit" className="payment-button">
+              Continue
+            </Button>
           </div>
         </Form>
       </div>
+      <Footer />
     </div>
   );
 }

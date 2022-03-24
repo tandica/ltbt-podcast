@@ -4,6 +4,7 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Store } from "../Store";
 import Badge from "react-bootstrap/Badge";
 import { Link } from "react-router-dom";
+import "../styles/Nav.scss";
 
 export default function Navv() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -17,57 +18,81 @@ export default function Navv() {
     window.location.href = "/";
   };
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      variant="dark"
-      className="py-5 px-md-5 nav"
-    >
-      <Navbar.Brand href="/" className="nav-logo">
-        LTBT
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="me-auto  w-100  justify-content-end">
-          <Nav.Link href="/episodes">EPISODES</Nav.Link>
-          <Nav.Link href="/events">EVENTS</Nav.Link>
-          <Nav.Link href="/about">ABOUT US</Nav.Link>
-          <Nav.Link href="/store">STORE</Nav.Link>
-          <Nav.Link href="/contact">CONTACT US</Nav.Link>
-          <Nav.Link href="/cart">Cart</Nav.Link>
-          {cart.cartItems.length > 0 && (
-            <span>
-              <Badge pill bg="danger">
-                {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
-              </Badge>
-            </span>
-          )}
-          {userInfo ? (
-            <NavDropdown
-              title={userInfo.name}
-              id="navbarScrollingDropdown"
-              className="dropdown"
-            >
-              <NavDropdown.Item href="/profile" className="dropdown-item">
-                My Profile
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/orderhistory" className="dropdown-item">
-                Order History
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
+    <div className="nav-container">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        variant="dark"
+        className="py-5 px-md-5 nav"
+      >
+        <Navbar.Brand href="/" className="nav-logo">
+          LTBT
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav" className="nav-dropdown">
+          <Nav
+            className="me-auto  w-100  justify-content-end"
+            id="nav-links-container"
+          >
+            <Nav.Link href="/episodes" className="nav-links">
+              EPISODES
+            </Nav.Link>
+            <Nav.Link href="/events" className="nav-links">
+              EVENTS
+            </Nav.Link>
+            <Nav.Link href="/about" className="nav-links">
+              ABOUT US
+            </Nav.Link>
+            <Nav.Link href="/store" className="nav-links">
+              STORE
+            </Nav.Link>
+            <Nav.Link href="/contact" className="nav-links">
+              CONTACT US
+            </Nav.Link>
+            <Nav.Link href="/cart" className="nav-links">
+              Cart{"  "}
+              {cart.cartItems.length > 0 && (
+                <span>
+                  <Badge pill bg="danger">
+                    {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                  </Badge>
+                </span>
+              )}
+            </Nav.Link>
 
-              <NavDropdown.Item>
-                <Link to="#signout" onClick={signoutHandler}>
-                  Logout
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
-          ) : (
-            <Nav.Link href="/login">Login</Nav.Link>
-          )}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+            {userInfo ? (
+              <NavDropdown
+                title={userInfo.name}
+                id="navbarScrollingDropdown"
+                className="dropdown"
+                align="end"
+              >
+                <NavDropdown.Item href="/profile" className="dropdown-item">
+                  My Profile
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  href="/orderhistory"
+                  className="dropdown-item"
+                >
+                  Order History
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+
+                <NavDropdown.Item>
+                  <Link to="#signout" onClick={signoutHandler}>
+                    Logout
+                  </Link>
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <Nav.Link href="/login" className="nav-links">
+                Login
+              </Nav.Link>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
   );
 }
 

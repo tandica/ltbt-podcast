@@ -62,7 +62,7 @@ export default function ShippingPage() {
       <Helmet>
         <title>LTBT | Shipping</title>
       </Helmet>
-      <CheckoutSteps step1 step2 className="checkout-steps"></CheckoutSteps>
+      <CheckoutSteps step1 step2></CheckoutSteps>
       <div className="shipping-container">
         <div className="container small-container">
           <h1 className="mb-4 mt-4">Shipping Address</h1>

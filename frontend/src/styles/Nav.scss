@@ -1,85 +1,38 @@
-.nav {
-  // color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.164);
-  display: flex;
-  justify-content: space-between;
-  margin: 0rem 4rem 1rem 4rem;
-  padding-top: 2rem;
-  font-family: "Cardo", serif !important;
-  font-size: 35px;
-  // z-index: 500;
-
+.nav-container {
+  z-index: 100;
   .nav-logo {
-    a {
-      color: #fff;
-      text-decoration: none;
-      &:hover {
-        color: #ebdab6;
-      }
-    }
+    font-size: 30px;
   }
 
-  .nav-items {
-    a {
-      margin-right: 2rem;
-      color: #fff !important;
+  .nav-dropdown {
+    background-color: #271000e0;
+    border-radius: 10px;
+    padding: 1rem 2rem 1rem 2rem;
 
-      text-decoration: none;
-      &:hover {
-        color: #ebdab6;
-      }
-    }
+    #nav-links-container {
+      display: flex;
+      justify-content: flex-end;
 
-    .dropdown {
-      .dropdown-item {
-        color: black;
-      }
-
-      .dropdown-signout {
-        color: black;
+      .nav-links {
+        color: white;
+        &:hover {
+          color: #ebdab6;
+        }
       }
     }
   }
 }
 
 @media screen and (max-width: 576px) {
-  .nav {
-    margin: 0rem 0rem 0rem 3rem;
-    padding-top: 0rem;
+  .nav-container {
+    margin-right: 20px;
+    margin-left: 20px;
 
     .nav-logo {
-      margin-top: 2rem;
-    }
-
-    .nav-items {
-      display: flex;
-      flex-direction: column;
-      margin-top: 1rem;
-
-      a {
-        margin-top: 1rem;
-      }
+      font-size: 25px;
     }
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 992px) {
-  .nav {
-    margin: 0rem 3rem 0rem 3rem;
-    padding-top: 0rem;
-
-    .nav-logo {
-      margin-top: 2rem;
-    }
-
-    .nav-items {
-      margin-top: 2rem;
-
-      a {
-        margin-top: 1rem;
-        margin-right: 0rem;
-        margin-left: 1.7rem;
-      }
-    }
-  }
 }

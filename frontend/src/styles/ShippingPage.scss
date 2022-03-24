@@ -1,9 +1,3 @@
-.checkout-steps {
-  margin-top: 2em;
-  margin-left: 3em;
-  margin-right: 3em;
-}
-
 .shipping-container {
   padding: 2em 15em 2em 15em;
 
@@ -23,23 +17,82 @@
 }
 
 @media screen and (max-width: 576px) {
-  .checkout-steps {
-    margin-left: 0em;
-    margin-right: 0em;
-  }
-
   .shipping-container {
     padding: 2em 2em 2em 2em;
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 992px) {
-  .checkout-steps {
-    margin-left: 0em;
-    margin-right: 0em;
-  }
-
   .shipping-container {
     padding: 2em 5em 2em 5em;
+  }
+}
+
+//Payment Page
+.payment-container {
+  padding: 2em 3em 2em 3em;
+
+  .payment-button {
+    background-color: #866042;
+    color: #fff;
+    border: none;
+    padding: 10px 28px 10px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 20px 1px #27100027;
+    &:hover {
+      color: #271000;
+      background-color: #ebdab6;
+    }
+  }
+}
+
+//Place Order Page
+.place-order-page-container {
+  padding: 2em 3em 2em 3em;
+
+  a {
+    color: #866042;
+    font-weight: bold;
+    &:hover {
+      color: #271000;
+    }
+  }
+
+  .place-order-button {
+    background-color: #866042;
+    color: #fff;
+    border: none;
+    padding: 10px 28px 10px 28px;
+    font-size: 17px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 20px 1px #27100027;
+    &:hover {
+      color: #271000;
+      background-color: #ebdab6;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .place-order-page-container {
+    padding: 2em 2em 2em 2em;
+  }
+}
+
+//Order Details Page
+.order-details-container {
+  padding: 2em 3em 2em 3em;
+}
+
+@media screen and (max-width: 576px) {
+  .order-details-container {
+    padding: 2em 2em 2em 2em;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .order-details-container {
+    padding: 1em 3em 2em 3em;
   }
 }

@@ -1,13 +1,38 @@
-.checkout-steps {
-  div {
-    border-bottom: 0.2rem solid #d1d1d1;
-    color: #d1d1d1;
+.checkout-steps-container {
+  margin-left: 3em;
+  margin-right: 3em;
+
+  .checkout-steps {
+    div {
+      border-bottom: 0.2rem solid #bbbbbb;
+      color: #bbbbbb;
+      margin-top: 2em;
+    }
   }
 }
 
-.checkout-steps {
-  div.active {
-    border-bottom: 0.2rem solid #866042;
-    color: #866042;
+.checkout-steps-container {
+  margin-left: 3em;
+  margin-right: 3em;
+
+  .checkout-steps {
+    div.active {
+      border-bottom: 0.2rem solid #866042;
+      color: #866042;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .checkout-steps-container {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .checkout-steps-container {
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
