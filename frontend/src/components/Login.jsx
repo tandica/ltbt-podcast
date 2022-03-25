@@ -6,7 +6,6 @@ import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
-import { Alert } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import "../styles/Login.scss";
 

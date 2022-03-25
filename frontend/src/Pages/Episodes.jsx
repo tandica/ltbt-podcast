@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSoundcloud, faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { faPodcast } from "@fortawesome/free-solid-svg-icons";
 import { Helmet } from "react-helmet-async";
+import { highlightedEpisodes } from "../data.js";
 
 export default function Episodes() {
   return (
@@ -41,10 +42,70 @@ export default function Episodes() {
           </a>
         </div>
         <p className="episodes-paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris
+          Our episodes reflect our identities and intersectionalities, as well
+          as our individual experiences and stories. Each episode is guaranteed
+          to make you laugh, and inform you on important topics.
         </p>
+        <div className="highlighted-episodes-container">
+          <h2 className="highlighted-episodes-heading">
+            Some of our favourite episodes...
+          </h2>
+          {/* <div className="embedded">
+            <iframe
+              title="Why Gentrification??"
+              src="https://open.spotify.com/embed/episode/1Lfa1v7gtjkt79kfxb6Wl6?utm_source=generator"
+              width="45%"
+              height="232"
+              frameBorder="0"
+              allowfullscreen=""
+              className="embedded-ep"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <iframe
+              title="Representation Matters"
+              src="https://open.spotify.com/embed/episode/143TtzWfx0mAYz6dpyXD8q?utm_source=generator"
+              width="45%"
+              height="232"
+              frameBorder="0"
+              className="embedded-ep"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <iframe
+              title="Are you really my friend"
+              src="https://open.spotify.com/embed/episode/7HWDtoCLM7WIbohWSfJl7w?utm_source=generator"
+              width="45%"
+              height="232"
+              frameBorder="0"
+              className="embedded-ep"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+            <iframe
+              title="Yes...not even water"
+              src="https://open.spotify.com/embed/episode/3zvszbuTatZ4pb5XzXQ7dA?utm_source=generator"
+              width="45%"
+              height="232"
+              frameBorder="0"
+              allowfullscreen=""
+              className="embedded-ep"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+          </div> */}
+          <div className="highlighted-episodes">
+            {highlightedEpisodes.map((episode) => (
+              <div className="highlighted-episodes-card">
+                <a href={episode.link}>
+                  <h3 className="highlighted-episodes-title">{episode.name}</h3>
+                </a>
+                <br></br>
+                <h4 className="highlighted-episodes-description">
+                  {episode.description}
+                </h4>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       <Footer />
     </div>

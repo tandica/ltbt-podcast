@@ -2,7 +2,6 @@ import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/Events.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { upcomingEvents, upcomingLiveShows } from "../../data/data";
 import { upcomingEvents, upcomingLiveShows } from "../data.js";
 import { Helmet } from "react-helmet-async";
 
