@@ -8,6 +8,8 @@
 
 .homepage-text-container {
   background-color: #866042;
+  z-index: -1;
+
   color: white;
   padding-bottom: 50px;
   font-family: "Cardo", serif;
@@ -42,6 +44,11 @@
 }
 
 @media screen and (max-width: 576px) {
+  .homepage-header-image {
+    height: 200px;
+    max-height: auto;
+  }
+
   .homepage-text-container {
     .homepage-text-paragraph {
       margin: 1em 2em 2em 2em;
@@ -50,6 +57,11 @@
 }
 
 @media screen and (min-width: 576px) and (max-width: 992px) {
+  .homepage-header-image {
+    height: 400px;
+    max-height: auto;
+  }
+
   .homepage-text-container {
     .homepage-text-paragraph {
       margin: 1em 3em 2em 3em;

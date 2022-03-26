@@ -1,12 +1,12 @@
 import "../styles/Store.scss";
-import { Link } from "react-router-dom";
+
 import Navv from "../components/Nav";
 import logger from "use-reducer-logger";
 import Footer from "../components/Footer";
 import Product from "../components/Product";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { useState, useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
 
@@ -53,7 +53,7 @@ function Store() {
         <Navv />
       </div>
       <div className="store-container">
-        <h1 className="store-title">NEW PRODUCTS</h1>
+        <h1 className="store-title">PRODUCTS</h1>
         <div className="products-container">
           <div className="products-list">
             {loading ? (
