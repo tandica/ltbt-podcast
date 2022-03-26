@@ -19,12 +19,7 @@ export default function Navv() {
   };
   return (
     <div className="nav-container">
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        variant="dark"
-        className="py-5 px-md-5 nav"
-      >
+      <Navbar collapseOnSelect expand="lg" variant="dark" className="">
         <Navbar.Brand href="/" className="nav-logo">
           LTBT
         </Navbar.Brand>

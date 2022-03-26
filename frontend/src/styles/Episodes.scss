@@ -100,6 +100,11 @@
 }
 
 @media screen and (max-width: 576px) {
+  .episodes-header-image {
+    height: 250px;
+    max-height: auto;
+  }
+
   .episodes-container {
     padding-bottom: 25px;
 
@@ -110,6 +115,11 @@
 }
 
 @media screen and (min-width: 576px) and (max-width: 992px) {
+  .episodes-header-image {
+    height: 400px;
+    max-height: auto;
+  }
+
   .episodes-container {
     padding-bottom: 25px;
 

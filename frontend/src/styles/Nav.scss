@@ -1,17 +1,19 @@
 .nav-container {
   z-index: 100;
+  background-color: #27100054;
+
   .nav-logo {
     font-size: 30px;
+    margin-left: 1.2em;
   }
 
   .nav-toggle {
     background-color: #271000;
-    // border-color: #866042 !important;
-    border-color: none;
+    border: 1px solid #ebdab6 !important;
+    margin-right: 2rem;
   }
 
   .nav-dropdown {
-    // background-color: #271000e0;
     border-radius: 10px;
     padding: 1rem 2rem 1rem 2rem;
 
@@ -21,9 +23,15 @@
 
       .nav-links {
         color: white;
+        margin-left: 0.5rem;
         &:hover {
           color: #ebdab6;
         }
+      }
+
+      .dropdown {
+        margin-left: 0.5rem;
+        color: white !important;
       }
     }
   }
@@ -31,8 +39,8 @@
 
 @media screen and (max-width: 576px) {
   .nav-container {
-    margin-right: 20px;
-    margin-left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
 
     .nav-logo {
       font-size: 25px;
