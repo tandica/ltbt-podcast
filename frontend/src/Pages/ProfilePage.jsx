@@ -7,6 +7,8 @@ import { toast } from "react-toastify";
 import { getError } from "../utils";
 import axios from "axios";
 import Navv from "../components/Nav";
+import Footer from "../components/Footer";
+import "../styles/ShippingPage.scss";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -63,47 +65,55 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="container small-container">
+    <div>
       <Helmet>
         <title>LTBT | My Profile</title>
       </Helmet>
-      <h1 className="my-3">My Profile</h1>
-      <form onSubmit={submitHandler}>
-        <Form.Group className="mb-3" controlId="name">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="name">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="password">
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
-            type="password"
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </Form.Group>
-        <div className="mb-3">
-          <Button type="submit">Update</Button>
-        </div>
-      </form>
+      <div className="profile-header-image">
+        <Navv />
+      </div>
+      <div className="profile-container">
+        <h1 className="my-3">Update Your Profile</h1>
+        <form onSubmit={submitHandler}>
+          <Form.Group className="mb-3" controlId="name">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="name">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="password">
+            <Form.Label>New Password</Form.Label>
+            <Form.Control
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="password">
+            <Form.Label>Confirm Password</Form.Label>
+            <Form.Control
+              type="password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </Form.Group>
+          <div className="mb-3">
+            <Button type="submit" className="profile-button">
+              Update
+            </Button>
+          </div>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 }

@@ -18,6 +18,9 @@ import PlaceOrder from "./Pages/PlaceOrderPage";
 import OrderPage from "./Pages/OrderPage";
 import OrderHistoryPage from "./Pages/OrderHistoryPage";
 import ProfilePage from "./Pages/ProfilePage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Dashboard from "./Pages/Dashboard";
+import AdminRoute from "./components/AdminRoute";
 
 function App() {
   return (
@@ -36,9 +39,39 @@ function App() {
         <Route path="/shipping" element={<ShippingPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/order" element={<PlaceOrder />} />
-        <Route path="/order/:id" element={<OrderPage />} />
-        <Route path="/orderhistory" element={<OrderHistoryPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route
+          path="/order/:id"
+          element={
+            <ProtectedRoute>
+              <OrderPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/orderhistory"
+          element={
+            <ProtectedRoute>
+              <OrderHistoryPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <ProfilePage />
+            </ProtectedRoute>
+          }
+        />
+        {/* Admin Routes */}
+        <Route
+          path="/admin/dashboard"
+          element={
+            <AdminRoute>
+              <Dashboard />
+            </AdminRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
