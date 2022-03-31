@@ -22,6 +22,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./Pages/Dashboard";
 import AdminRoute from "./components/AdminRoute";
 import ProductListAdmin from "./Pages/ProductListAdmin";
+import ProductEditAdmin from "./Pages/ProductEditAdmin";
 
 function App() {
   return (
@@ -78,6 +79,14 @@ function App() {
           element={
             <AdminRoute>
               <ProductListAdmin />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/product/:id"
+          element={
+            <AdminRoute>
+              <ProductEditAdmin />
             </AdminRoute>
           }
         />

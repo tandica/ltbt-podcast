@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
+import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -97,6 +98,9 @@ export default function ProductListAdmin() {
 
   return (
     <div>
+      <Helmet>
+        <title>LTBT | Admin Product List</title>
+      </Helmet>
       <Navv />
       <div className="products-admin-container">
         <Row>
@@ -127,6 +131,7 @@ export default function ProductListAdmin() {
                   <th>NAME</th>
                   <th>PRICE</th>
                   <th>CATEGORY</th>
+                  <th>ACTIONS</th>
                 </tr>
               </thead>
               <tbody>
@@ -136,6 +141,17 @@ export default function ProductListAdmin() {
                     <td>{product.name}</td>
                     <td>$ {product.price}</td>
                     <td>{product.category}</td>
+                    <td>
+                      <Button
+                        type="button"
+                        variant="light"
+                        onClick={() =>
+                          navigate(`/admin/product/${product._id}`)
+                        }
+                      >
+                        Edit
+                      </Button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
