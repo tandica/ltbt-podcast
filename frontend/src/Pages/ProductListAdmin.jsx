@@ -1,11 +1,16 @@
 import axios from "axios";
 import { useReducer, useEffect, useContext } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import { Store } from "../Store";
 import Navv from "../components/Nav";
 import Footer from "../components/Footer";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import { toast } from "react-toastify";
+import { getError } from "../utils";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -22,18 +27,31 @@ const reducer = (state, action) => {
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
 
+    case "CREATE_REQUEST":
+      return { ...state, loadingCreate: true };
+    case "CREATE_SUCCESS":
+      return {
+        ...state,
+        loadingCreate: false,
+      };
+    case "CREATE_FAIL":
+      return { ...state, loadingCreate: false };
+
     default:
       return state;
   }
 };
 
 export default function ProductListAdmin() {
-  const [{ loading, error, products, pages }, dispatch] = useReducer(reducer, {
-    loading: true,
-    error: "",
-  });
+  const navigate = useNavigate();
 
-  const { search, pathname } = useLocation();
+  const [{ loading, error, products, pages, loadingCreate }, dispatch] =
+    useReducer(reducer, {
+      loading: true,
+      error: "",
+    });
+
+  const { search } = useLocation();
   const sp = new URLSearchParams(search);
   const page = sp.get("page") || 1;
 
@@ -53,11 +71,49 @@ export default function ProductListAdmin() {
     fetchData();
   }, [page, userInfo]);
 
+  //creating a new product
+  const createHandler = async () => {
+    if (window.confirm("Are you sure to create?")) {
+      try {
+        dispatch({ type: "CREATE_REQUEST" });
+        const { data } = await axios.post(
+          "/api/store",
+          {},
+          {
+            headers: { Authorization: `Bearer ${userInfo.token}` },
+          }
+        );
+        toast.success("Product created successfully!");
+        dispatch({ type: "CREATE_SUCCESS" });
+        navigate(`/admin/product/${data.product._id}`);
+      } catch (err) {
+        toast.error(getError(error));
+        dispatch({
+          type: "CREATE_FAIL",
+        });
+      }
+    }
+  };
+
   return (
     <div>
       <Navv />
       <div className="products-admin-container">
-        <h1 className="mb-3">Products</h1>
+        <Row>
+          <Col>
+            <h1 className="mb-3">Products</h1>
+          </Col>
+          <Col className="col text-end">
+            <div>
+              <Button type="button" onClick={createHandler}>
+                Create Product
+              </Button>
+            </div>
+          </Col>
+        </Row>
+
+        {loadingCreate && <LoadingBox></LoadingBox>}
+
         {loading ? (
           <LoadingBox></LoadingBox>
         ) : error ? (
