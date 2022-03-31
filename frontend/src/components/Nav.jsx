@@ -92,15 +92,11 @@ export default function Navv() {
                 <NavDropdown.Item href="/admin/dashboard">
                   Dashboard
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/admin/productlist">
+                <NavDropdown.Item href="/admin/products">
                   Products
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/admin/orderlist">
-                  Orders
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/admin/userlist">
-                  Users
-                </NavDropdown.Item>
+                <NavDropdown.Item href="/admin/orders">Orders</NavDropdown.Item>
+                <NavDropdown.Item href="/admin/users">Users</NavDropdown.Item>
               </NavDropdown>
             )}
           </Nav>

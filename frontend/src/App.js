@@ -1,6 +1,6 @@
 import React from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { BrowserRouter, Link, Route, Routes, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Episodes from "./Pages/Episodes";
 import Events from "./Pages/Events";
@@ -21,6 +21,7 @@ import ProfilePage from "./Pages/ProfilePage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./Pages/Dashboard";
 import AdminRoute from "./components/AdminRoute";
+import ProductListAdmin from "./Pages/ProductListAdmin";
 
 function App() {
   return (
@@ -69,6 +70,14 @@ function App() {
           element={
             <AdminRoute>
               <Dashboard />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/products"
+          element={
+            <AdminRoute>
+              <ProductListAdmin />
             </AdminRoute>
           }
         />
