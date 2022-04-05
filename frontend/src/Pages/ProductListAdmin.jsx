@@ -27,7 +27,7 @@ const reducer = (state, action) => {
       };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
-
+    //create/edit a product
     case "CREATE_REQUEST":
       return { ...state, loadingCreate: true };
     case "CREATE_SUCCESS":
@@ -37,7 +37,20 @@ const reducer = (state, action) => {
       };
     case "CREATE_FAIL":
       return { ...state, loadingCreate: false };
+    //delete a product
+    case "DELETE_REQUEST":
+      return { ...state, loadingDelete: true, successDelete: false };
+    case "DELETE_SUCCESS":
+      return {
+        ...state,
+        loadingDelete: false,
+        successDelete: true,
+      };
+    case "DELETE_FAIL":
+      return { ...state, loadingDelete: false, successDelete: false };
 
+    case "DELETE_RESET":
+      return { ...state, loadingDelete: false, successDelete: false };
     default:
       return state;
   }
@@ -46,11 +59,21 @@ const reducer = (state, action) => {
 export default function ProductListAdmin() {
   const navigate = useNavigate();
 
-  const [{ loading, error, products, pages, loadingCreate }, dispatch] =
-    useReducer(reducer, {
-      loading: true,
-      error: "",
-    });
+  const [
+    {
+      loading,
+      error,
+      products,
+      pages,
+      loadingCreate,
+      loadingDelete,
+      successDelete,
+    },
+    dispatch,
+  ] = useReducer(reducer, {
+    loading: true,
+    error: "",
+  });
 
   const { search } = useLocation();
   const sp = new URLSearchParams(search);
@@ -69,12 +92,17 @@ export default function ProductListAdmin() {
         dispatch({ type: "FETCH_SUCCESS", payload: data });
       } catch (err) {}
     };
-    fetchData();
-  }, [page, userInfo]);
+    //remove product from list when deleted, otherwise call function
+    if (successDelete) {
+      dispatch({ type: "DELETE_RESET" });
+    } else {
+      fetchData();
+    }
+  }, [page, userInfo, successDelete]);
 
   //creating a new product
   const createHandler = async () => {
-    if (window.confirm("Are you sure to create?")) {
+    if (window.confirm("Click OK to create a new product.")) {
       try {
         dispatch({ type: "CREATE_REQUEST" });
         const { data } = await axios.post(
@@ -91,6 +119,24 @@ export default function ProductListAdmin() {
         toast.error(getError(error));
         dispatch({
           type: "CREATE_FAIL",
+        });
+      }
+    }
+  };
+
+  //deleting a product
+  const deleteHandler = async (product) => {
+    if (window.confirm("Are you sure you want to delete this product?")) {
+      try {
+        await axios.delete(`/api/store/${product._id}`, {
+          headers: { Authorization: `Bearer ${userInfo.token}` },
+        });
+        toast.success("Product deleted successfully.");
+        dispatch({ type: "DELETE_SUCCESS" });
+      } catch (err) {
+        toast.error(getError(error));
+        dispatch({
+          type: "DELETE_FAIL",
         });
       }
     }
@@ -117,6 +163,7 @@ export default function ProductListAdmin() {
         </Row>
 
         {loadingCreate && <LoadingBox></LoadingBox>}
+        {loadingDelete && <LoadingBox></LoadingBox>}
 
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -150,6 +197,14 @@ export default function ProductListAdmin() {
                         }
                       >
                         Edit
+                      </Button>
+                      &nbsp;
+                      <Button
+                        type="button"
+                        variant="danger"
+                        onClick={() => deleteHandler(product)}
+                      >
+                        Delete
                       </Button>
                     </td>
                   </tr>

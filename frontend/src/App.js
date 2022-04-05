@@ -23,6 +23,7 @@ import Dashboard from "./Pages/Dashboard";
 import AdminRoute from "./components/AdminRoute";
 import ProductListAdmin from "./Pages/ProductListAdmin";
 import ProductEditAdmin from "./Pages/ProductEditAdmin";
+import OrderListAdmin from "./Pages/OrderListAdmin";
 
 function App() {
   return (
@@ -87,6 +88,14 @@ function App() {
           element={
             <AdminRoute>
               <ProductEditAdmin />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/orders"
+          element={
+            <AdminRoute>
+              <OrderListAdmin />
             </AdminRoute>
           }
         />
