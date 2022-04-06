@@ -59,7 +59,7 @@ export default function Dashboard() {
   return (
     <div>
       <Helmet>
-        <title>LTBT | ADMIN</title>
+        <title>LTBT | Admin | Dashboard</title>
       </Helmet>
       <div className="">
         <Navv />

@@ -145,7 +145,7 @@ export default function ProductListAdmin() {
   return (
     <div>
       <Helmet>
-        <title>LTBT | Admin Product List</title>
+        <title>LTBT | Admin | Product List</title>
       </Helmet>
       <Navv />
       <div className="products-admin-container">
