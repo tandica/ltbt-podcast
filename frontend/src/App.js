@@ -24,6 +24,7 @@ import AdminRoute from "./components/AdminRoute";
 import ProductListAdmin from "./Pages/ProductListAdmin";
 import ProductEditAdmin from "./Pages/ProductEditAdmin";
 import OrderListAdmin from "./Pages/OrderListAdmin";
+import UserListAdmin from "./Pages/UserListAdmin";
 
 function App() {
   return (
@@ -96,6 +97,14 @@ function App() {
           element={
             <AdminRoute>
               <OrderListAdmin />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            <AdminRoute>
+              <UserListAdmin />
             </AdminRoute>
           }
         />

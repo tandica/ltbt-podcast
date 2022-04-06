@@ -2,9 +2,20 @@ import express from "express";
 import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import expressAsyncHandler from "express-async-handler";
-import { isAuth, generateToken } from "../utils.js";
+import { isAuth, isAdmin, generateToken } from "../utils.js";
 
 const userRouter = express.Router();
+
+//return all users - admin users section
+userRouter.get(
+  "/",
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const users = await User.find({});
+    res.send(users);
+  })
+);
 
 userRouter.post(
   "/login",
