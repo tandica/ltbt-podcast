@@ -25,6 +25,7 @@ import ProductListAdmin from "./Pages/ProductListAdmin";
 import ProductEditAdmin from "./Pages/ProductEditAdmin";
 import OrderListAdmin from "./Pages/OrderListAdmin";
 import UserListAdmin from "./Pages/UserListAdmin";
+import UserEditAdmin from "./Pages/UserEditAdmin";
 
 function App() {
   return (
@@ -105,6 +106,14 @@ function App() {
           element={
             <AdminRoute>
               <UserListAdmin />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/user/:id"
+          element={
+            <AdminRoute>
+              <UserEditAdmin />
             </AdminRoute>
           }
         />
