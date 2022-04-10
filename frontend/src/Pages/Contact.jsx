@@ -46,7 +46,7 @@ export default function Contact() {
                 size="2x"
                 className="contact-social-icons"
               />
-              @ltbtpodcast
+              letstalkbigtingz@gmail.com
             </a>
           </div>
         </div>
