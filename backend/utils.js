@@ -46,23 +46,23 @@ export const isAdmin = (req, res, next) => {
 export const mailgun = () =>
   mg({
     apiKey: process.env.MAILGUN_API_KEY,
-    domain: process.env.MAILGUN_DOMIAN,
+    domain: process.env.MAILGUN_DOMAIN,
   });
 
 export const payOrderEmailTemplate = (order) => {
-  return `<h1>Thanks for shopping with us</h1>
+  return `<h2>Thanks for supporting the Let's Talk Big Tingz Podcast!</h2>
     <p>
     Hi ${order.user.name},</p>
-    <p>We have finished processing your order.</p>
+    <p>We are now processing your order. See the details below...We hope you are as excited as us!</p>
     <h2>[Order ${order._id}] (${order.createdAt
     .toString()
     .substring(0, 10)})</h2>
     <table>
     <thead>
     <tr>
-    <td><strong>Product</strong></td>
-    <td><strong>Quantity</strong></td>
-    <td><strong align="right">Price</strong></td>
+    <td colspan="2"><strong>Product</strong></td>
+    <td colspan="2"><strong>Quantity</strong></td>
+    <td style="padding-left:3em" colspan="2"><strong align="right">Price</strong></td>
     </thead>
     <tbody>
     ${order.orderItems
@@ -70,8 +70,8 @@ export const payOrderEmailTemplate = (order) => {
         (item) => `
       <tr>
       <td>${item.name}</td>
-      <td align="center">${item.quantity}</td>
-      <td align="right"> $${item.price.toFixed(2)}</td>
+      <td align="center"colspan="2">${item.quantity}</td>
+      <td align="right" colspan="2"> $${item.price.toFixed(2)}</td>
       </tr>
     `
       )
@@ -79,16 +79,18 @@ export const payOrderEmailTemplate = (order) => {
     </tbody>
     <tfoot>
     <tr>
-    <td colspan="2">Items Price:</td>
-    <td align="right"> $${order.itemsPrice.toFixed(2)}</td>
+    <td colspan="3">Items Price:</td>
+    <td align="right" colspan="2"> $${order.itemsPrice.toFixed(2)}</td>
     </tr>
     <tr>
-    <td colspan="2">Shipping Price:</td>
-    <td align="right"> $${order.shippingPrice.toFixed(2)}</td>
+    <td colspan="3">Shipping Price:</td>
+    <td align="right"colspan="2"> $${order.shippingPrice.toFixed(2)}</td>
     </tr>
     <tr>
-    <td colspan="2"><strong>Total Price:</strong></td>
-    <td align="right"><strong> $${order.totalPrice.toFixed(2)}</strong></td>
+    <td colspan="3"><strong>Total Price:</strong></td>
+    <td align="right" colspan="2"><strong> $${order.totalPrice.toFixed(
+      2
+    )}</strong></td>
     </tr>
     <tr>
     <td colspan="2">Payment Method:</td>
@@ -105,72 +107,11 @@ export const payOrderEmailTemplate = (order) => {
     </p>
     <hr/>
     <p>
-    Thanks for shopping with us.
+    If you have any questions, please contact us at <a href="mailto:letstalkbigtingz@gmail.com">
+
+    letstalkbigtingz@gmail.com.
+  </a> <br></br>
+  Have a great day!
     </p>
     `;
 };
-
-// export const payOrderEmailTemplate = (order) => {
-//   return `<h1>Thanks for supportung the Let's Talk Big Tingz Podcast!</h1>
-//     <p>
-//     Hi ${order.user.name},</p>
-//     <p>We are now processing your order. See the details below...We hope you are as excited as us!</p>
-//     <h2>[Order ${order._id}] (${order.createdAt
-//     .toString()
-//     .substring(0, 10)})</h2>
-//     <table>
-//     <thead>
-//     <tr>
-//     <td><strong>Product</strong></td>
-//     <td><strong>Quantity</strong></td>
-//     <td><strong align="right">Price</strong></td>
-//     </thead>
-//     <tbody>
-//     ${order.orderItems
-//       .map(
-//         (item) => `
-//       <tr>
-//       <td>${item.name}</td>
-//       <td align="center">${item.quantity}</td>
-//       <td align="right"> $${item.price.toFixed(2)}</td>
-//       </tr>
-//     `
-//       )
-//       .join("\n")}
-//     </tbody>
-//     <tfoot>
-//     <tr>
-//     <td colspan="2">Items Price:</td>
-//     <td align="right"> $${order.itemsPrice.toFixed(2)}</td>
-//     </tr>
-//     <tr>
-//     <td colspan="2">Shipping Price:</td>
-//     <td align="right"> $${order.shippingPrice.toFixed(2)}</td>
-//     </tr>
-//     <tr>
-//     <td colspan="2"><strong>Total Price:</strong></td>
-//     <td align="right"><strong> $${order.totalPrice.toFixed(2)}</strong></td>
-//     </tr>
-//     <tr>
-//     <td colspan="2">Payment Method:</td>
-//     <td align="right">${order.paymentMethod}</td>
-//     </tr>
-//     </table>
-//     <h2>Shipping address</h2>
-//     <p>
-//     ${order.shippingAddress.fullName},<br/>
-//     ${order.shippingAddress.address},<br/>
-//     ${order.shippingAddress.city},<br/>
-//     ${order.shippingAddress.country},<br/>
-//     ${order.shippingAddress.postalCode}<br/>
-//     </p>
-//     <hr/>
-//     <p>
-//     If you have any questions, please contact us at<a href="mailto:letstalkbigtingz@gmail.com">
-
-//     letstalkbigtingz@gmail.com.
-//   </a> <br></br>
-//   Have a great day!
-//     </p>
-//     `;
-// };

@@ -151,16 +151,16 @@ orderRouter.put(
         .messages()
         .send(
           {
-            from: "Amazona <amazona@mg.yourdomain.com>",
+            from: "Let's Talk Big Tingz Podcast <letstalkbigtingz@gmail.com>",
             to: `${order.user.name} <${order.user.email}>`,
-            subject: `New order ${order._id}`,
+            subject: `Thank you for your order! New order ${order._id}`,
             html: payOrderEmailTemplate(order),
           },
           (error, body) => {
             if (error) {
-              console.log(error);
+              console.log("error:", error);
             } else {
-              console.log(body);
+              console.log("BODY HERE", body);
             }
           }
         );
