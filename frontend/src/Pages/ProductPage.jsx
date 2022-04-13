@@ -1,8 +1,6 @@
 import "../styles/ProductPage.scss";
-// import { productData } from "../data/data";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { useContext, useEffect, useReducer } from "react";
+import { useContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
@@ -11,6 +9,11 @@ import { Store } from "../Store";
 import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet-async";
+import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -29,6 +32,8 @@ function ProductPage(props) {
   const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
+
+  const [selectedImage, setSelectedImage] = useState("");
 
   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
     product: [],
@@ -88,6 +93,24 @@ function ProductPage(props) {
           <div className="product-name">{product.name}</div>
           <div className="product-descrption">{product.description}</div>
           <div className="product-price">$ {product.price}</div>
+          <ListGroup.Item>
+            <Row xs={1} md={2} className="g-2">
+              {[product.image, ...product.images].map((x) => (
+                <Col key={x}>
+                  <Card>
+                    <Button
+                      className="thumbnail"
+                      type="button"
+                      variant="light"
+                      onClick={() => setSelectedImage(x)}
+                    >
+                      <Card.Img variant="top" src={x} alt="product" />
+                    </Button>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </ListGroup.Item>
           {product.countInStock > 0 ? (
             <p className="product-status">IN STOCK</p>
           ) : (
@@ -101,7 +124,7 @@ function ProductPage(props) {
             <button className="product-button-nostock">ADD TO CART</button>
           )}
         </div>
-        <img src={product.image} alt={product.name}></img>
+        <img src={selectedImage || product.image} alt={product.name}></img>
       </div>
       <Footer />
     </div>
