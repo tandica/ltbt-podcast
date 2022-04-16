@@ -62,7 +62,6 @@
     margin-right: 5em;
 
     .about-team-card {
-      border: 1px solid red;
       width: 30%;
       margin: 3rem 1rem 3rem 1rem;
 
@@ -85,31 +84,62 @@
 
 .about-mission-container {
   display: flex;
-  justify-content: center;
   background: #271000;
   color: #ebdab6;
-  padding-left: 7rem;
-  padding-right: 7rem;
-  padding-top: 3rem;
+  flex-wrap: wrap;
+  padding: 7rem 11em 7rem 11em;
 
-  .about-mission-titles {
-    width: 40%;
-    font-family: "Great Vibes", cursive;
+  .about-mission-text-container {
+    display: flex;
 
     .about-mission {
+      font-family: "Great Vibes", cursive;
       margin: 0em;
-      padding: 2em;
-      font-size: 50px;
+      font-size: 70px;
     }
-  }
-
-  .about-mission-paragraph {
-    font-family: "Cardo", serif;
 
     .about-mission-text {
-      margin: 6em;
-    }
+        font-family: "Cardo", serif;
+        text-align: center;
+        padding-left: 10em;
+      }
   }
+
+  .about-vision-text-container {
+    display: flex;
+    padding-top: 6rem;
+
+
+    .about-vision {
+      font-family: "Great Vibes", cursive;
+      margin: 0em;
+      font-size: 70px;
+    }
+
+    .about-vision-text {
+        font-family: "Cardo", serif;
+        text-align: center;
+        padding-left: 10em;
+      }
+  }
+
+  .about-values-text-container {
+    display: flex;
+    padding-top: 6rem;
+
+    .about-values {
+      font-family: "Great Vibes", cursive;
+      margin: 0em;
+      font-size: 70px;
+    }
+
+    .about-values-text {
+        font-family: "Cardo", serif;
+        text-align: center;
+        padding-left: 10em;
+      }
+  }
+
 }
 
 @media screen and (max-width: 576px) {

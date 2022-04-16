@@ -45,22 +45,25 @@ export default function About() {
         </div>
       </div>
       <div className="about-mission-container">
-        <div className="about-mission-titles">
+        <div className="about-mission-text-container">
+          {" "}
           <h1 className="about-mission">Mission</h1>
-          <h1 className="about-mission">Values</h1>
-          <h1 className="about-mission">Values</h1>
-        </div>
-        <div className="about-mission-paragraph">
           <p className="about-mission-text">
             Create platforms where young Black creatives are noticed,
             appreciated, and succeed
           </p>
-          <p className="about-mission-text">
+        </div>
+        <div className="about-vision-text-container">
+          <h1 className="about-vision">Vision</h1>
+          <p className="about-vision-text">
             A synergetic, Black women led organization that allows a safe space
             for conversation, realization, and support for, to, and by Black
             women
           </p>
-          <p className="about-mission-text">
+        </div>
+        <div className="about-values-text-container">
+          <h1 className="about-values">Values</h1>
+          <p className="about-values-text">
             Collaboration, success, community, and leadership that will provide
             positive outcomes for young Black women and girls
           </p>

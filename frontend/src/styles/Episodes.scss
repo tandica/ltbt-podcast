@@ -44,7 +44,6 @@
     .highlighted-episodes-heading {
       color: #ebdab6;
       text-align: center;
-      // margin-bottom: 1em;
     }
 
     .embedded {
@@ -111,6 +110,17 @@
     .episodes-paragraph {
       margin: 1em 3em 2em 3em;
     }
+
+    .highlighted-episodes-container {
+      padding: 2rem 0em 0em 0em;
+
+      .highlighted-episodes {
+  
+        .highlighted-episodes-card {
+          width: 85%;
+        }
+      }
+    }
   }
 }
 
@@ -125,6 +135,17 @@
 
     .episodes-paragraph {
       margin: 1em 7em 2em 7em;
+    }
+
+    .highlighted-episodes-container {
+      padding: 2rem 0em 0em 0em;
+
+      .highlighted-episodes {
+  
+        .highlighted-episodes-card {
+          width: 40%;
+        }
+      }
     }
   }
 }
