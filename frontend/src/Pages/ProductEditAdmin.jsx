@@ -13,6 +13,8 @@ import Button from "react-bootstrap/Button";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import Navv from "../components/Nav";
+import Footer from "../components/Footer";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -163,12 +165,14 @@ export default function ProductEditAdmin() {
 
   return (
     <div>
-      {" "}
+      <div>
+        <Navv />
+      </div>
       <Container className="small-container">
         <Helmet>
-          <title>LTBT | Edit Product ${productId}</title>
+          <title>LTBT | Edit Product {productId}</title>
         </Helmet>
-        <h1>Edit Product {productId}</h1>
+        <h1 className="mb-3 mt-5">Edit Product {productId}</h1>
 
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -276,6 +280,7 @@ export default function ProductEditAdmin() {
           </Form>
         )}
       </Container>
+      <Footer />
     </div>
   );
 }

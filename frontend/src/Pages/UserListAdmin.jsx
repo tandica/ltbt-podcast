@@ -8,6 +8,9 @@ import { Helmet } from "react-helmet-async";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Navv from "../components/Nav";
+import Footer from "../components/Footer";
+import "../styles/Dashboard.scss";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -97,52 +100,58 @@ export default function UserListAdmin() {
       <Helmet>
         <title>Users</title>
       </Helmet>
-      <h1>Users</h1>
-      {loadingDelete && <LoadingBox></LoadingBox>}
-      {loading ? (
-        <LoadingBox></LoadingBox>
-      ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
-      ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>NAME</th>
-              <th>EMAIL</th>
-              <th>ADMIN?</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user._id}>
-                <td>{user._id}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.isAdmin ? "YES" : "NO"}</td>
-                <td>
-                  <Button
-                    type="button"
-                    variant="light"
-                    onClick={() => navigate(`/admin/user/${user._id}`)}
-                  >
-                    Edit
-                  </Button>
-                  &nbsp;
-                  <Button
-                    type="button"
-                    variant="danger"
-                    onClick={() => deleteHandler(user)}
-                  >
-                    Delete
-                  </Button>
-                </td>
+      <div>
+        <Navv />
+      </div>
+      <div className="user-list-admin-container">
+        <h1 className="mb-3">Users</h1>
+        {loadingDelete && <LoadingBox></LoadingBox>}
+        {loading ? (
+          <LoadingBox></LoadingBox>
+        ) : error ? (
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
+          <table className="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>ADMIN?</th>
+                <th>ACTIONS</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </thead>
+            <tbody>
+              {users.map((user) => (
+                <tr key={user._id}>
+                  <td>{user._id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.isAdmin ? "YES" : "NO"}</td>
+                  <td>
+                    <Button
+                      type="button"
+                      variant="light"
+                      onClick={() => navigate(`/admin/user/${user._id}`)}
+                    >
+                      Edit
+                    </Button>
+                    &nbsp;
+                    <Button
+                      type="button"
+                      variant="danger"
+                      onClick={() => deleteHandler(user)}
+                    >
+                      Delete
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+      <Footer />
     </div>
   );
 }

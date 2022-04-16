@@ -8,6 +8,9 @@ import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { toast } from "react-toastify";
+import Navv from "../components/Nav";
+import Footer from "../components/Footer";
+import "../styles/Dashboard.scss";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -98,62 +101,69 @@ export default function OrderListAdmin() {
       <Helmet>
         <title>LTBT | Admin | Orders</title>
       </Helmet>
-      <h1>Orders</h1>
-      {loadingDelete && <LoadingBox></LoadingBox>}
-      {loading ? (
-        <LoadingBox></LoadingBox>
-      ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
-      ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((order) => (
-              <tr key={order._id}>
-                <td>{order._id}</td>
-                <td>{order.user ? order.user.name : "DELETED USER"}</td>
-                <td>{order.createdAt.substring(0, 10)}</td>
-                <td>{order.totalPrice.toFixed(2)}</td>
-                <td>{order.isPaid ? order.paidAt.substring(0, 10) : "No"}</td>
-                <td>
-                  {order.isDelivered
-                    ? order.deliveredAt.substring(0, 10)
-                    : "No"}
-                </td>
-                <td>
-                  <Button
-                    type="button"
-                    variant="light"
-                    onClick={() => {
-                      navigate(`/order/${order._id}`);
-                    }}
-                  >
-                    Details
-                  </Button>
-                  &nbsp;
-                  <Button
-                    type="button"
-                    variant="danger"
-                    onClick={() => deleteHandler(order)}
-                  >
-                    Delete
-                  </Button>
-                </td>
+      <div>
+        <Navv />
+      </div>
+      <div className="order-list-admin-container">
+        <h1 className="mb-3">Orders</h1>
+        {loadingDelete && <LoadingBox></LoadingBox>}
+        {loading ? (
+          <LoadingBox></LoadingBox>
+        ) : error ? (
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
+          <table className="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>USER</th>
+                <th>DATE</th>
+                <th>TOTAL</th>
+                <th>PAID</th>
+                <th>DELIVERED</th>
+                <th>ACTIONS</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </thead>
+            <tbody>
+              {orders.map((order) => (
+                <tr key={order._id}>
+                  <td>{order._id}</td>
+                  <td>{order.user ? order.user.name : "DELETED USER"}</td>
+                  <td>{order.createdAt.substring(0, 10)}</td>
+                  <td>{order.totalPrice.toFixed(2)}</td>
+                  <td>{order.isPaid ? order.paidAt.substring(0, 10) : "No"}</td>
+                  <td>
+                    {order.isDelivered
+                      ? order.deliveredAt.substring(0, 10)
+                      : "No"}
+                  </td>
+                  <td>
+                    <Button
+                      type="button"
+                      variant="light"
+                      className="mb-2"
+                      onClick={() => {
+                        navigate(`/order/${order._id}`);
+                      }}
+                    >
+                      Details
+                    </Button>
+
+                    <Button
+                      type="button"
+                      variant="danger"
+                      onClick={() => deleteHandler(order)}
+                    >
+                      Delete
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+      <Footer />
     </div>
   );
 }

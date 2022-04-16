@@ -10,6 +10,8 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Helmet } from "react-helmet-async";
+import Navv from "../components/Nav";
+import Footer from "../components/Footer";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -92,11 +94,14 @@ export default function UserEditAdmin() {
 
   return (
     <div>
+      <Helmet>
+        <title>Edit User $ {userId}</title>
+      </Helmet>
+      <div>
+        <Navv />
+      </div>
       <Container className="small-container">
-        <Helmet>
-          <title>Edit User $ {userId}</title>
-        </Helmet>
-        <h1>Edit User {userId}</h1>
+        <h1 className="mb-3 mt-5">Edit User {userId}</h1>
 
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -126,7 +131,7 @@ export default function UserEditAdmin() {
               className="mb-3"
               type="checkbox"
               id="isAdmin"
-              label="isAdmin"
+              label="Admin?"
               checked={isAdmin}
               onChange={(e) => setIsAdmin(e.target.checked)}
             />
@@ -140,6 +145,7 @@ export default function UserEditAdmin() {
           </Form>
         )}
       </Container>
+      <Footer />
     </div>
   );
 }
