@@ -140,7 +140,7 @@ export default function OrderListAdmin() {
                   <td>
                     <Button
                       type="button"
-                      variant="light"
+                      variant="outline-dark"
                       className="mb-2"
                       onClick={() => {
                         navigate(`/order/${order._id}`);
@@ -148,10 +148,11 @@ export default function OrderListAdmin() {
                     >
                       Details
                     </Button>
-
+                    &nbsp; &nbsp;
                     <Button
                       type="button"
                       variant="danger"
+                      className="mb-2"
                       onClick={() => deleteHandler(order)}
                     >
                       Delete

@@ -329,7 +329,11 @@ export default function OrderPage() {
                     <ListGroup.Item>
                       {loadingDeliver && <LoadingBox></LoadingBox>}
                       <div className="d-grid">
-                        <Button type="button" onClick={deliverOrderHandler}>
+                        <Button
+                          type="button"
+                          onClick={deliverOrderHandler}
+                          variant="success"
+                        >
                           Mark as Delivered
                         </Button>
                       </div>

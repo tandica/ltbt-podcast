@@ -13,6 +13,7 @@ import { getError } from "../utils";
 import axios from "axios";
 import LoadingBox from "../components/LoadingBox";
 import Footer from "../components/Footer";
+import Navv from "../components/Nav";
 import "../styles/ShippingPage.scss";
 
 //reducer for creating an order
@@ -95,12 +96,15 @@ export default function PlaceOrder() {
 
   return (
     <div>
-      <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
       <Helmet>
         <title>LTBT | Preview Order</title>
       </Helmet>
+      <div>
+        <Navv />
+      </div>
+      <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
       <div className="place-order-page-container">
-        <h1 className="mb-4 mt-4">Preview Order</h1>
+        <h1 className="mb-4 mt-2">Preview Order</h1>
         <Row>
           <Col md={8}>
             <Card className="mb-3">

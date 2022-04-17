@@ -272,7 +272,12 @@ export default function ProductEditAdmin() {
               />
             </Form.Group>
             <div className="mb-3">
-              <Button type="submit" disabled={loadingUpdate}>
+              <Button
+                type="submit"
+                disabled={loadingUpdate}
+                className="mb-3"
+                variant="outline-dark"
+              >
                 Update
               </Button>
               {loadingUpdate && <LoadingBox></LoadingBox>}

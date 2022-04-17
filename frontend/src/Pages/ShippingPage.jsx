@@ -7,6 +7,7 @@ import { Store } from "../Store";
 import CheckoutSteps from "../components/CheckoutSteps";
 import "../styles/ShippingPage.scss";
 import Footer from "../components/Footer";
+import Navv from "../components/Nav";
 
 export default function ShippingPage() {
   const navigate = useNavigate();
@@ -62,6 +63,9 @@ export default function ShippingPage() {
       <Helmet>
         <title>LTBT | Shipping</title>
       </Helmet>
+      <div>
+        <Navv />
+      </div>
       <CheckoutSteps step1 step2></CheckoutSteps>
       <div className="shipping-container">
         <div className="container small-container">

@@ -155,7 +155,11 @@ export default function ProductListAdmin() {
           </Col>
           <Col className="col text-end">
             <div>
-              <Button type="button" onClick={createHandler}>
+              <Button
+                type="button"
+                variant="outline-dark"
+                onClick={createHandler}
+              >
                 Create Product
               </Button>
             </div>
@@ -191,14 +195,14 @@ export default function ProductListAdmin() {
                     <td>
                       <Button
                         type="button"
-                        variant="light"
+                        variant="outline-dark"
                         onClick={() =>
                           navigate(`/admin/product/${product._id}`)
                         }
                       >
                         Edit
                       </Button>
-                      &nbsp;
+                      &nbsp;&nbsp;
                       <Button
                         type="button"
                         variant="danger"

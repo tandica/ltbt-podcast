@@ -131,12 +131,12 @@ export default function UserListAdmin() {
                   <td>
                     <Button
                       type="button"
-                      variant="light"
+                      variant="outline-dark"
                       onClick={() => navigate(`/admin/user/${user._id}`)}
                     >
                       Edit
                     </Button>
-                    &nbsp;
+                    &nbsp; &nbsp;
                     <Button
                       type="button"
                       variant="danger"

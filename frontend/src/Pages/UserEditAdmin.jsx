@@ -137,7 +137,12 @@ export default function UserEditAdmin() {
             />
 
             <div className="mb-3">
-              <Button disabled={loadingUpdate} type="submit">
+              <Button
+                className="mb-3"
+                disabled={loadingUpdate}
+                type="submit"
+                variant="outline-dark"
+              >
                 Update
               </Button>
               {loadingUpdate && <LoadingBox></LoadingBox>}
