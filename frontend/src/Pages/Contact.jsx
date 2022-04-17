@@ -1,10 +1,6 @@
 import Navv from "../components/Nav";
 import Footer from "../components/Footer";
-import {
-  fab,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styles/Contact.scss";
@@ -16,9 +12,8 @@ export default function Contact() {
       <Helmet>
         <title>LTBT | Contact Us</title>
       </Helmet>
-      <div className="homepage-header-image">
-        <Navv />
-      </div>
+      <Navv />
+      <div className="homepage-header-image"></div>
       <div>
         <div className="contact-container">
           <h1 className="contact-title">GET IN TOUCH</h1>{" "}

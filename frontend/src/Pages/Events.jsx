@@ -1,7 +1,6 @@
 import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import "../styles/Events.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { upcomingEvents, upcomingLiveShows } from "../data.js";
 import { Helmet } from "react-helmet-async";
 
@@ -11,9 +10,8 @@ export default function Events() {
       <Helmet>
         <title>LTBT | Events</title>
       </Helmet>
-      <div className="events-header-image">
-        <Navv />
-      </div>
+      <Navv />
+      <div className="events-header-image"></div>
       <div className="events-container">
         <h1 className="events-title">UPCOMING LIVE SHOWS</h1>
         <div className="events-liveshow-container">

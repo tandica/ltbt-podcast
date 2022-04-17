@@ -13,9 +13,8 @@ export default function Episodes() {
       <Helmet>
         <title>LTBT | Episodes</title>
       </Helmet>
-      <div className="episodes-header-image">
-        <Navv />
-      </div>
+      <Navv />
+      <div className="episodes-header-image"></div>
       <div className="episodes-container">
         <h1 className="episodes-title">LISTEN TO OUR PODCAST</h1>
         <div className="episodes-links">

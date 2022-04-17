@@ -1,5 +1,4 @@
 import "../styles/Store.scss";
-
 import Navv from "../components/Nav";
 import logger from "use-reducer-logger";
 import Footer from "../components/Footer";
@@ -49,9 +48,8 @@ function Store() {
       <Helmet>
         <title>LTBT | Store</title>
       </Helmet>
-      <div className="store-header-image">
-        <Navv />
-      </div>
+      <Navv />
+      <div className="store-header-image"></div>
       <div className="store-container">
         <h1 className="store-title">PRODUCTS</h1>
         <div className="products-container">

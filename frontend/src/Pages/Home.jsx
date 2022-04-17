@@ -5,9 +5,8 @@ import "../styles/Home.scss";
 export default function Home(props) {
   return (
     <div>
-      <div className="homepage-header-image">
-        <Navv />
-      </div>
+      <Navv />
+      <div className="homepage-header-image"></div>
       <div className="homepage-text-container">
         <h1 className="homepage-text-title">TITLE</h1>
         <p className="homepage-text-paragraph">

@@ -17,6 +17,7 @@ import Card from "react-bootstrap/Card";
 import Footer from "../components/Footer";
 import "../styles/Cart.scss";
 import { Helmet } from "react-helmet-async";
+import Navv from "../components/Nav";
 
 export default function Cart() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -54,6 +55,7 @@ export default function Cart() {
       <Helmet>
         <title>LTBT | Shopping Cart</title>
       </Helmet>
+      <Navv />
       <div className="cart-container">
         <div>
           <h1 className="mb-3">Shopping Cart</h1>

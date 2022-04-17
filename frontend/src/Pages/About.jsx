@@ -11,9 +11,8 @@ export default function About() {
       <Helmet>
         <title>About LTBT</title>
       </Helmet>
-      <div className="about-header-image">
-        <Navv />
-      </div>
+      <Navv />
+      <div className="about-header-image"></div>
       <div className="about-who-container">
         <div className="about-who">
           <h1 className="about-who-title">WHO ARE WE?</h1>
