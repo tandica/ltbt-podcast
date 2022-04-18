@@ -1,4 +1,4 @@
-import "../styles/Store.scss";
+import "../styles/Product.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
@@ -34,15 +34,16 @@ function Product(props) {
   // console.log(product._id);
 
   return (
-    <div>
-      {" "}
+    <div className="product-container">
       <div className="product" key={product.slug}>
         <Link to={`/store/${product.slug}`}>
-          <img
-            src={product.image}
-            alt={product.name}
-            className="about-team-img"
-          />
+          <div className="product-img-div">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="about-team-img"
+            />
+          </div>
         </Link>
         <div className="product-info">
           <Link to={`/store/${product.slug}`}>
@@ -56,7 +57,10 @@ function Product(props) {
               Out of stock
             </Button>
           ) : (
-            <Button onClick={() => addToCartHandler(product)}>
+            <Button
+              onClick={() => addToCartHandler(product)}
+              className="add-to-cart-button"
+            >
               Add to cart
             </Button>
           )}

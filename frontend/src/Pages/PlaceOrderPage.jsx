@@ -198,7 +198,7 @@ export default function PlaceOrder() {
                         onClick={placeOrderHandler}
                         disabled={cart.cartItems.length === 0}
                       >
-                        Place Order
+                        Review Order and Pay
                       </Button>
                     </div>
                     {loading && <LoadingBox></LoadingBox>}
