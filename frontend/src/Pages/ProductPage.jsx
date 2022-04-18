@@ -1,5 +1,5 @@
 import "../styles/ProductPage.scss";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
 import LoadingBox from "../components/LoadingBox";
@@ -14,6 +14,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Badge from "react-bootstrap/Badge";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -84,51 +85,142 @@ function ProductPage(props) {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <Helmet>
-        <title>LTBT | {product.name}</title>
-      </Helmet>
       <Navv />
-      <div className="single-product-container">
-        <div className="product-info">
-          <div className="product-name">{product.name}</div>
-          <div className="product-descrption">{product.description}</div>
-          <div className="product-price">$ {product.price}</div>
-          <ListGroup.Item>
-            <Row xs={1} md={2} className="g-2">
-              {[product.image, ...product.images].map((x) => (
-                <Col key={x}>
-                  <Card>
-                    <Button
-                      className="thumbnail"
-                      type="button"
-                      variant="light"
-                      onClick={() => setSelectedImage(x)}
-                    >
-                      <Card.Img variant="top" src={x} alt="product" />
-                    </Button>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </ListGroup.Item>
-          {product.countInStock > 0 ? (
-            <p className="product-status">IN STOCK</p>
-          ) : (
-            <p className="product-status">OUT OF STOCK</p>
-          )}
-          {product.countInStock > 0 ? (
-            <button className="product-button" onClick={addToCartHandler}>
-              ADD TO CART
-            </button>
-          ) : (
-            <button className="product-button-nostock">ADD TO CART</button>
-          )}
+      <Row className="single-product-container">
+        <div className="product-image-div">
+          <img
+            className="product-image"
+            src={selectedImage || product.image}
+            alt={product.name}
+          ></img>
         </div>
-        <img src={selectedImage || product.image} alt={product.name}></img>
-      </div>
+
+        <div className="product-info">
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              <Helmet>
+                <title>{product.name}</title>
+              </Helmet>
+              <h1>{product.name}</h1>
+            </ListGroup.Item>
+
+            <ListGroup.Item>Price : ${product.price}</ListGroup.Item>
+            <ListGroup.Item>
+              <Row xs={1} md={2} className="g-2">
+                {[product.image, ...product.images].map((x) => (
+                  <Col key={x}>
+                    <Card>
+                      <Button
+                        className="thumbnail"
+                        type="button"
+                        variant="light"
+                        onClick={() => setSelectedImage(x)}
+                      >
+                        <Card.Img variant="top" src={x} alt="product" />
+                      </Button>
+                    </Card>
+                  </Col>
+                ))}
+              </Row>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              Description:
+              <p>{product.description}</p>
+            </ListGroup.Item>
+          </ListGroup>
+        </div>
+        <div className="product-checkout">
+          <Card>
+            <Card.Body>
+              <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Price:</Col>
+                    <Col>${product.price}</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Status:</Col>
+                    <Col>
+                      {product.countInStock > 0 ? (
+                        <Badge bg="dark">In Stock</Badge>
+                      ) : (
+                        <Badge bg="danger">NOT IN STOCK</Badge>
+                      )}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+
+                {product.countInStock > 0 && (
+                  <ListGroup.Item>
+                    <div className="d-grid">
+                      <Button
+                        onClick={addToCartHandler}
+                        variant="primary"
+                        className="product-button"
+                      >
+                        Add to Cart
+                      </Button>
+                    </div>
+                  </ListGroup.Item>
+                )}
+              </ListGroup>
+            </Card.Body>
+          </Card>
+        </div>
+      </Row>
       <Footer />
     </div>
   );
 }
 
 export default ProductPage;
+
+{
+  /* <div>
+<Helmet>
+  <title>LTBT | {product.name}</title>
+</Helmet>
+<Navv />
+<div className="single-product-container">
+  <div className="product-info">
+    <div className="product-name">{product.name}</div>
+    <div className="product-descrption">{product.description}</div>
+    <div className="product-price">$ {product.price}</div>
+    <ListGroup.Item>
+      <Row xs={1} md={2} className="g-2">
+        {[product.image, ...product.images].map((x) => (
+          <Col key={x}>
+            <Card>
+              <Button
+                className="thumbnail"
+                type="button"
+                variant="light"
+                onClick={() => setSelectedImage(x)}
+              >
+                <Card.Img variant="top" src={x} alt="product" />
+              </Button>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </ListGroup.Item>
+    {product.countInStock > 0 ? (
+      <p className="product-status">IN STOCK</p>
+    ) : (
+      <p className="product-status">OUT OF STOCK</p>
+    )}
+    {product.countInStock > 0 ? (
+      <button className="product-button" onClick={addToCartHandler}>
+        ADD TO CART
+      </button>
+    ) : (
+      <button className="product-button-nostock">ADD TO CART</button>
+    )}
+  </div>
+  <img src={selectedImage || product.image} alt={product.name}></img>
+</div>
+<Footer />
+</div> */
+}
