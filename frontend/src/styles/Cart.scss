@@ -1,6 +1,11 @@
 .cart-container {
   padding: 2em 9em 2em 9em;
 
+  .item-name {
+    color: #271000;
+    text-decoration: none;
+  }
+
   .cart-button {
     background-color: #866042;
     box-shadow: 4px 4px 32px 1px rgba(0, 0, 0, 0.096);
@@ -12,6 +17,13 @@
     &:hover {
       color: #271000;
       background-color: #ebdab6;
+    }
+  }
+
+  .trash-icon {
+    color: #DC3545;
+    &:hover {
+      color: #ffffff;
     }
   }
 }

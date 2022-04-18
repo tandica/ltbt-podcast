@@ -64,7 +64,7 @@ export default function Cart() {
               Cart is empty. <Link to="/store">Go to the LTBT Store</Link>
             </MessageBox>
           ) : (
-            <ListGroup>
+            <ListGroup className="mb-4">
               {cartItems.map((item) => (
                 <ListGroup.Item key={item._id}>
                   <Row className="align-items-center">
@@ -74,11 +74,14 @@ export default function Cart() {
                         alt={item.name}
                         className="img-fluid rounded img-thumbnail"
                       ></img>
-                      <Link to={`/store/${item.slug}`}>{item.name}</Link>
+                      <Link to={`/store/${item.slug}`} className="item-name">
+                        {item.name}
+                      </Link>
                     </Col>
                     <Col>
                       <Button
-                        variant="light"
+                        variant="outline-dark"
+                        className="rounded-pill"
                         onClick={() =>
                           updateCartHandler(item, item.quantity - 1)
                         }
@@ -86,9 +89,12 @@ export default function Cart() {
                       >
                         <FontAwesomeIcon icon={faMinusCircle} />
                       </Button>
+                      &nbsp; &nbsp;
                       <span>{item.quantity}</span>
+                      &nbsp; &nbsp;
                       <Button
-                        variant="light"
+                        className="rounded-pill"
+                        variant="outline-dark"
                         onClick={() =>
                           updateCartHandler(item, item.quantity + 1)
                         }
@@ -97,14 +103,18 @@ export default function Cart() {
                         <FontAwesomeIcon icon={faPlusCircle} />
                       </Button>
                     </Col>
-                    <Col>{item.price}</Col>
+                    <Col>$ {item.price}</Col>
                     <Col>
                       {" "}
                       <Button
-                        variant="light"
+                        className="rounded-pill"
+                        variant="outline-dark"
                         onClick={() => removeItemHandler(item)}
                       >
-                        <FontAwesomeIcon icon={faTrash} />
+                        <FontAwesomeIcon
+                          icon={faTrash}
+                          className="trash-icon"
+                        />
                       </Button>
                     </Col>
                   </Row>
