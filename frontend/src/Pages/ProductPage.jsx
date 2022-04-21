@@ -86,7 +86,7 @@ function ProductPage(props) {
   ) : (
     <div>
       <Navv />
-      <Row className="single-product-container">
+      <div className="single-product-container">
         <div className="product-image-div">
           <img
             className="product-image"
@@ -169,7 +169,7 @@ function ProductPage(props) {
             </Card.Body>
           </Card>
         </div>
-      </Row>
+      </div>
       <Footer />
     </div>
   );
