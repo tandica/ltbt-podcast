@@ -111,9 +111,9 @@ function ProductPage(props) {
               <Row xs={1} md={2} className="g-2">
                 {[product.image, ...product.images].map((x) => (
                   <Col key={x}>
-                    <Card>
+                    <Card border="light">
                       <Button
-                        className="thumbnail"
+                        className="selected-image-button"
                         type="button"
                         variant="light"
                         onClick={() => setSelectedImage(x)}
