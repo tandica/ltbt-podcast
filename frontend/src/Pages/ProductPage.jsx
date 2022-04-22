@@ -85,6 +85,9 @@ function ProductPage(props) {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
+      <Helmet>
+        <title>{product.name}</title>
+      </Helmet>
       <Navv />
       <div className="single-product-container">
         <div className="product-image-div">
@@ -96,16 +99,15 @@ function ProductPage(props) {
         </div>
 
         <div className="product-info">
-          <ListGroup variant="flush">
-            <ListGroup.Item>
-              <Helmet>
-                <title>{product.name}</title>
-              </Helmet>
-              <h1>{product.name}</h1>
-            </ListGroup.Item>
+          <div>
+            <h1>{product.name}</h1>
 
-            <ListGroup.Item>Price : ${product.price}</ListGroup.Item>
-            <ListGroup.Item>
+            <p>Price: ${product.price}</p>
+            <div>
+              Description:
+              <p>{product.description}</p>
+            </div>
+            <div>
               <Row xs={1} md={2} className="g-2">
                 {[product.image, ...product.images].map((x) => (
                   <Col key={x}>
@@ -122,12 +124,8 @@ function ProductPage(props) {
                   </Col>
                 ))}
               </Row>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              Description:
-              <p>{product.description}</p>
-            </ListGroup.Item>
-          </ListGroup>
+            </div>
+          </div>
         </div>
         <div className="product-checkout">
           <Card>
