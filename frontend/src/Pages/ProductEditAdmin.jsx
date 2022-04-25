@@ -224,14 +224,16 @@ export default function ProductEditAdmin() {
                 {images.map((x) => (
                   <ListGroup.Item key={x}>
                     {x}
+                    &nbsp; &nbsp;{" "}
                     <Button
-                      variant="light"
+                      variant="danger"
+                      className="rounded-pill"
                       onClick={() => deleteFileHandler(x)}
                     >
                       <FontAwesomeIcon
                         icon={faTrash}
                         size="1x"
-                        className="contact-social-icons"
+                        className="trash-icon-product-edit"
                       />
                     </Button>
                   </ListGroup.Item>

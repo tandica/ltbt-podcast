@@ -80,7 +80,7 @@ export default function Cart() {
                     </Col>
                     <Col>
                       <Button
-                        variant="outline-dark"
+                        variant="outline-secondary"
                         className="rounded-pill"
                         onClick={() =>
                           updateCartHandler(item, item.quantity - 1)
@@ -94,7 +94,7 @@ export default function Cart() {
                       &nbsp; &nbsp;
                       <Button
                         className="rounded-pill"
-                        variant="outline-dark"
+                        variant="outline-secondary"
                         onClick={() =>
                           updateCartHandler(item, item.quantity + 1)
                         }
@@ -108,7 +108,7 @@ export default function Cart() {
                       {" "}
                       <Button
                         className="rounded-pill"
-                        variant="outline-dark"
+                        variant="danger"
                         onClick={() => removeItemHandler(item)}
                       >
                         <FontAwesomeIcon
