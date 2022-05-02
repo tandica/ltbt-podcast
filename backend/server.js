@@ -1,5 +1,5 @@
 import express from "express";
-import productData from "./data.js";
+import path from "path";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
@@ -40,10 +40,11 @@ app.use("/api/orders", orderRouter);
 app.use("/api/store", productRouter);
 app.use("/api/users", userRouter);
 
-//store route
-// app.get("/api/store", (req, res) => {
-//   res.send(productData.products);
-// });
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
+);
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
