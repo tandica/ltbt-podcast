@@ -49,7 +49,7 @@ export default function About() {
           <h1 className="about-mission">Mission</h1>
           <p className="about-mission-text">
             Create platforms where young Black creatives are noticed,
-            appreciated, and succeed
+            appreciated, and succeed hhcgfhdsfgsrgfsrsertgsetgesgtsgtdtgfgdgdg
           </p>
         </div>
         <div className="about-vision-text-container">
