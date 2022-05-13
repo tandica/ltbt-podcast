@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useReducer, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Store } from "../Store";
+import { Store } from "../Store.js";
 import { getError } from "../utils";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";

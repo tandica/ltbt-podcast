@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import React, { useContext } from "react";
-import { Store } from "../Store";
+import { Store } from "../Store.js";
 
 export default function AdminRoute({ children }) {
   const { state } = useContext(Store);

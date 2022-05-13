@@ -3,7 +3,7 @@ import { useReducer, useEffect, useContext } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { Store } from "../Store";
+import { Store } from "../Store.js";
 import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import Row from "react-bootstrap/Row";

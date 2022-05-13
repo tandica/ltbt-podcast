@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Store } from "../Store";
+import { Store } from "../Store.js";
 import MessageBox from "./MessageBox";
 import axios from "axios";
 import ListGroup from "react-bootstrap/ListGroup";

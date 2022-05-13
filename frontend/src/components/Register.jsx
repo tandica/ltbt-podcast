@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { Store } from "../Store";
+import { Store } from "../Store.js";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
 import { Helmet } from "react-helmet-async";

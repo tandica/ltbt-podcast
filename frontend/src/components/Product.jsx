@@ -2,7 +2,7 @@ import "../styles/Product.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useContext } from "react";
-import { Store } from "../Store";
+import { Store } from "../Store.js";
 import Button from "react-bootstrap/Button";
 
 function Product(props) {
