@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useContext, useState, useEffect } from "react";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import Footer from "../components/Footer";
 import "../styles/ShippingPage.scss";
 import Navv from "../components/Nav";

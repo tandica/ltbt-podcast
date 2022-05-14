@@ -3,7 +3,7 @@ import { useReducer, useEffect, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import { getError } from "../utils";
 import { Helmet } from "react-helmet-async";
 import Row from "react-bootstrap/Row";

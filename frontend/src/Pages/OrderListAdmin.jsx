@@ -1,5 +1,5 @@
 import { useReducer, useEffect, useContext } from "react";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import axios from "axios";
 import { getError } from "../utils";
 import LoadingBox from "../components/LoadingBox";

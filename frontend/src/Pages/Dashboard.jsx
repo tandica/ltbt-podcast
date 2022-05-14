@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, useEffect } from "react";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import axios from "axios";

@@ -5,7 +5,7 @@ import axios from "axios";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import { getError } from "../utils";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet-async";

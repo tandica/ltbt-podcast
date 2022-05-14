@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
-import { StoreProvider } from "./Store.js";
+import { StoreProvider } from "./store.js";
 import { ToastContainer } from "react-toastify";
 
 ReactDOM.render(

@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useReducer } from "react";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import { toast } from "react-toastify";
 import { getError } from "../utils";
 import axios from "axios";

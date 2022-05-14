@@ -2,7 +2,7 @@ import axios from "axios";
 import { useReducer, useContext, useEffect } from "react";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import { getError } from "../utils";
 import { Helmet } from "react-helmet-async";
 import Button from "react-bootstrap/Button";

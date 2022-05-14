@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import Badge from "react-bootstrap/Badge";
 import { Link } from "react-router-dom";
 import "../styles/Nav.scss";

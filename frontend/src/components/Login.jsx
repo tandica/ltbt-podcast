@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import Navv from "../components/Nav";
 import Footer from "../components/Footer";
 import { toast } from "react-toastify";

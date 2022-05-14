@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { Store } from "../Store.js";
+import { Store } from "../store.js";
 import CheckoutSteps from "../components/CheckoutSteps";
 import "../styles/ShippingPage.scss";
 import Footer from "../components/Footer";
