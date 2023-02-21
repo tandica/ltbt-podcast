@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Let's Talk Big Tingz Podcast
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Let's Talk Big Tingz Podcast is an app for a real-world podcast featuring an e-commerce section.
 
 ## Available Scripts
 
